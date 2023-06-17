@@ -1,0 +1,312 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost:8000'
+paths:
+  /api/contacts:
+    get:
+      summary: 'Busca todos os contatos do usuário logado com paginação.'
+      operationId: buscaTodosOsContatosDoUsurioLogadoComPaginao
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {token}'
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'Insere um novo contato para o usuário logado.'
+      operationId: insereUmNovoContatoParaOUsurioLogado
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {token}'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Nome do contato.'
+                  example: João
+                second_name:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 100 characters.'
+                  example: nrpixskvyvannyhashkmwqsd
+                email:
+                  type: string
+                  description: 'Email do contato.'
+                  example: joaosilva@teste.com
+                number:
+                  type: string
+                  description: 'Número do contato.'
+                  example: (11)999999999
+                secondName:
+                  type: string
+                  description: 'Nome do contato.'
+                  example: Silva
+              required:
+                - name
+                - email
+                - number
+      security: []
+  '/api/contacts/{id}':
+    get:
+      summary: 'Busca um contato do usuário logado.'
+      operationId: buscaUmContatoDoUsurioLogado
+      description: ''
+      parameters:
+        -
+          in: query
+          name: id
+          description: 'Id do contato.'
+          example: ecd4f3ff-7e8d-4358-ac74-f997955c7c86
+          required: true
+          schema:
+            type: string
+            description: 'Id do contato.'
+            example: ecd4f3ff-7e8d-4358-ac74-f997955c7c86
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {token}'
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: 'Atualiza um contato do usuário logado.'
+      operationId: atualizaUmContatoDoUsurioLogado
+      description: ''
+      parameters:
+        -
+          in: query
+          name: id
+          description: 'Id do contato.'
+          example: ecd4f3ff-7e8d-4358-ac74-f997955c7c86
+          required: true
+          schema:
+            type: string
+            description: 'Id do contato.'
+            example: ecd4f3ff-7e8d-4358-ac74-f997955c7c86
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {token}'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Nome do contato.'
+                  example: João
+                secondName:
+                  type: string
+                  description: 'Nome do contato.'
+                  example: Silva
+                email:
+                  type: string
+                  description: 'Email do contato.'
+                  example: joaosilva@teste.com
+                number:
+                  type: string
+                  description: 'Número do contato.'
+                  example: (11)999999999
+      security: []
+    delete:
+      summary: 'Deleta um contato do usuário logado.'
+      operationId: deletaUmContatoDoUsurioLogado
+      description: ''
+      parameters:
+        -
+          in: query
+          name: id
+          description: 'Id do contato.'
+          example: ecd4f3ff-7e8d-4358-ac74-f997955c7c86
+          required: true
+          schema:
+            type: string
+            description: 'Id do contato.'
+            example: ecd4f3ff-7e8d-4358-ac74-f997955c7c86
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {token}'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the contact.'
+        example: voluptatem
+        required: true
+        schema:
+          type: string
+  /api/register:
+    post:
+      summary: 'Registra um novo usuário.'
+      operationId: registraUmNovoUsurio
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Nome do usuário.'
+                  example: João
+                email:
+                  type: string
+                  description: 'Email do usuário.'
+                  example: joao@teste.com
+                password:
+                  type: string
+                  description: 'Senha do usuário.'
+                  example: '123456'
+              required:
+                - name
+                - email
+                - password
+      security: []
+  /api/auth/login:
+    post:
+      summary: 'Faz o login do usuário.'
+      operationId: fazOLoginDoUsurio
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Email do usuário.'
+                  example: joao@teste.com
+                password:
+                  type: string
+                  description: 'Senha do usuário.'
+                  example: '123456'
+              required:
+                - email
+                - password
+      security: []
+  /api/auth/logout:
+    post:
+      summary: ''
+      operationId: postApiAuthLogout
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/auth/refresh:
+    post:
+      summary: ''
+      operationId: postApiAuthRefresh
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/auth/me:
+    post:
+      summary: ''
+      operationId: postApiAuthMe
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+tags:
+  -
+    name: Endpoints
+    description: ''
+components:
+  securitySchemes:
+    default:
+      type: http
+      scheme: bearer
+      description: ''
+security:
+  -
+    default: []

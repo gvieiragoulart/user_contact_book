@@ -1,0 +1,487 @@
+name: Endpoints
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/contacts
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Busca todos os contatos do usuário logado com paginação.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: 'Bearer {token}'
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/contacts
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Insere um novo contato para o usuário logado.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: 'Bearer {token}'
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Nome do contato.'
+        required: true
+        example: João
+        type: string
+        custom: []
+      second_name:
+        name: second_name
+        description: 'Must be at least 3 characters. Must not be greater than 100 characters.'
+        required: false
+        example: nrpixskvyvannyhashkmwqsd
+        type: string
+        custom: []
+      email:
+        name: email
+        description: 'Email do contato.'
+        required: true
+        example: joaosilva@teste.com
+        type: string
+        custom: []
+      number:
+        name: number
+        description: 'Número do contato.'
+        required: true
+        example: (11)999999999
+        type: string
+        custom: []
+      secondName:
+        name: secondName
+        description: 'Nome do contato.'
+        required: false
+        example: Silva
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: João
+      second_name: nrpixskvyvannyhashkmwqsd
+      email: joaosilva@teste.com
+      number: (11)999999999
+      secondName: Silva
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/contacts/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Busca um contato do usuário logado.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: 'Bearer {token}'
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the contact.'
+        required: true
+        example: voluptatem
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: voluptatem
+    queryParameters:
+      id:
+        name: id
+        description: 'Id do contato.'
+        required: true
+        example: ecd4f3ff-7e8d-4358-ac74-f997955c7c86
+        type: string
+        custom: []
+    cleanQueryParameters:
+      id: ecd4f3ff-7e8d-4358-ac74-f997955c7c86
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/contacts/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Atualiza um contato do usuário logado.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: 'Bearer {token}'
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the contact.'
+        required: true
+        example: perspiciatis
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: perspiciatis
+    queryParameters:
+      id:
+        name: id
+        description: 'Id do contato.'
+        required: true
+        example: ecd4f3ff-7e8d-4358-ac74-f997955c7c86
+        type: string
+        custom: []
+    cleanQueryParameters:
+      id: ecd4f3ff-7e8d-4358-ac74-f997955c7c86
+    bodyParameters:
+      name:
+        name: name
+        description: 'Nome do contato.'
+        required: false
+        example: João
+        type: string
+        custom: []
+      secondName:
+        name: secondName
+        description: 'Nome do contato.'
+        required: false
+        example: Silva
+        type: string
+        custom: []
+      email:
+        name: email
+        description: 'Email do contato.'
+        required: false
+        example: joaosilva@teste.com
+        type: string
+        custom: []
+      number:
+        name: number
+        description: 'Número do contato.'
+        required: false
+        example: (11)999999999
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: João
+      secondName: Silva
+      email: joaosilva@teste.com
+      number: (11)999999999
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/contacts/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Deleta um contato do usuário logado.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: 'Bearer {token}'
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the contact.'
+        required: true
+        example: est
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: est
+    queryParameters:
+      id:
+        name: id
+        description: 'Id do contato.'
+        required: true
+        example: ecd4f3ff-7e8d-4358-ac74-f997955c7c86
+        type: string
+        custom: []
+    cleanQueryParameters:
+      id: ecd4f3ff-7e8d-4358-ac74-f997955c7c86
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/register
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Registra um novo usuário.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Nome do usuário.'
+        required: true
+        example: João
+        type: string
+        custom: []
+      email:
+        name: email
+        description: 'Email do usuário.'
+        required: true
+        example: joao@teste.com
+        type: string
+        custom: []
+      password:
+        name: password
+        description: 'Senha do usuário.'
+        required: true
+        example: '123456'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: João
+      email: joao@teste.com
+      password: '123456'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/auth/login
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Faz o login do usuário.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: 'Email do usuário.'
+        required: true
+        example: joao@teste.com
+        type: string
+        custom: []
+      password:
+        name: password
+        description: 'Senha do usuário.'
+        required: true
+        example: '123456'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      email: joao@teste.com
+      password: '123456'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/auth/logout
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/auth/refresh
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/auth/me
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
