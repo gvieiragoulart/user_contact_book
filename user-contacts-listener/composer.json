@@ -1,0 +1,19 @@
+{
+    "name": "gabriel/app-php-listener",
+    "authors": [
+        {
+            "name": "Gabriel Vieira",
+            "email": "vieirabiel2009@hotmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Core\\": "src/Core"
+        }
+    },
+    "require": {
+        "phpmailer/phpmailer": "^6.8",
+        "aws/aws-sdk-php": "^3.273",
+        "vlucas/phpdotenv": "^5.5"
+    }
+}

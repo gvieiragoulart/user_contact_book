@@ -1,0 +1,5 @@
+Schema::dropIfExists('contacts');
+exit
+Schema::dropIfExists('contacts');
+
+exit

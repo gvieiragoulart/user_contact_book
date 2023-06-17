@@ -1,0 +1,47 @@
+2023-06-17 18:20:54 Error executing "ReceiveMessage" on "http://localstack:4566/000000000000/EMAIL_QUEUE"; AWS HTTP error: Client error: `POST http://localstack:4566/000000000000/EMAIL_QUEUE` resulted in a `400 Bad Request` response:
+<?xml version='1.0' encoding='utf-8'?>
+<ErrorResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><Error><Code>AW (truncated...)
+ AWS.SimpleQueueService.NonExistentQueue (client): The specified queue does not exist for this wsdl version. - <?xml version='1.0' encoding='utf-8'?>
+<ErrorResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><Error><Code>AWS.SimpleQueueService.NonExistentQueue</Code><Message>The specified queue does not exist for this wsdl version.</Message><Type>Sender</Type></Error><RequestId>6GFRU9LTCKQ1ECRM3I7J7XX9KVBA91QIVKNZYG5O9PQNHRDLOYNF</RequestId></ErrorResponse>
+2023-06-17 18:21:04 Error executing "ReceiveMessage" on "http://localstack:4566/000000000000/EMAIL_QUEUE"; AWS HTTP error: Client error: `POST http://localstack:4566/000000000000/EMAIL_QUEUE` resulted in a `400 Bad Request` response:
+<?xml version='1.0' encoding='utf-8'?>
+<ErrorResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><Error><Code>AW (truncated...)
+ AWS.SimpleQueueService.NonExistentQueue (client): The specified queue does not exist for this wsdl version. - <?xml version='1.0' encoding='utf-8'?>
+<ErrorResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><Error><Code>AWS.SimpleQueueService.NonExistentQueue</Code><Message>The specified queue does not exist for this wsdl version.</Message><Type>Sender</Type></Error><RequestId>KJ5TQ1C8V0IU5KGDZR07LXFFWML96UETRIL49J2CLFT4O93J9884</RequestId></ErrorResponse>
+2023-06-17 18:21:14 Error executing "ReceiveMessage" on "http://localstack:4566/000000000000/EMAIL_QUEUE"; AWS HTTP error: Client error: `POST http://localstack:4566/000000000000/EMAIL_QUEUE` resulted in a `400 Bad Request` response:
+<?xml version='1.0' encoding='utf-8'?>
+<ErrorResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><Error><Code>AW (truncated...)
+ AWS.SimpleQueueService.NonExistentQueue (client): The specified queue does not exist for this wsdl version. - <?xml version='1.0' encoding='utf-8'?>
+<ErrorResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><Error><Code>AWS.SimpleQueueService.NonExistentQueue</Code><Message>The specified queue does not exist for this wsdl version.</Message><Type>Sender</Type></Error><RequestId>75VT0AQUVRH48K7PD9O2L6RI1XAQKF3HL2WY274TEXDY28JF9M8C</RequestId></ErrorResponse>
+2023-06-17 18:21:24 Error executing "ReceiveMessage" on "http://localstack:4566/000000000000/EMAIL_QUEUE"; AWS HTTP error: Client error: `POST http://localstack:4566/000000000000/EMAIL_QUEUE` resulted in a `400 Bad Request` response:
+<?xml version='1.0' encoding='utf-8'?>
+<ErrorResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><Error><Code>AW (truncated...)
+ AWS.SimpleQueueService.NonExistentQueue (client): The specified queue does not exist for this wsdl version. - <?xml version='1.0' encoding='utf-8'?>
+<ErrorResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><Error><Code>AWS.SimpleQueueService.NonExistentQueue</Code><Message>The specified queue does not exist for this wsdl version.</Message><Type>Sender</Type></Error><RequestId>JT0MN1M48M6V7NVMKL6KW1Z2GKFE85CVIQ46Q41GM57RKNI3HQT9</RequestId></ErrorResponse>
+2023-06-17 18:21:34 Error executing "ReceiveMessage" on "http://localstack:4566/000000000000/EMAIL_QUEUE"; AWS HTTP error: Client error: `POST http://localstack:4566/000000000000/EMAIL_QUEUE` resulted in a `400 Bad Request` response:
+<?xml version='1.0' encoding='utf-8'?>
+<ErrorResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><Error><Code>AW (truncated...)
+ AWS.SimpleQueueService.NonExistentQueue (client): The specified queue does not exist for this wsdl version. - <?xml version='1.0' encoding='utf-8'?>
+<ErrorResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><Error><Code>AWS.SimpleQueueService.NonExistentQueue</Code><Message>The specified queue does not exist for this wsdl version.</Message><Type>Sender</Type></Error><RequestId>03INCRZVATD1VDJOLI76YUDSRDKJB0DRIL4K58OHHCO97CQCGASE</RequestId></ErrorResponse>
+2023-06-17 18:21:44 Error executing "ReceiveMessage" on "http://localstack:4566/000000000000/EMAIL_QUEUE"; AWS HTTP error: Client error: `POST http://localstack:4566/000000000000/EMAIL_QUEUE` resulted in a `400 Bad Request` response:
+<?xml version='1.0' encoding='utf-8'?>
+<ErrorResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><Error><Code>AW (truncated...)
+ AWS.SimpleQueueService.NonExistentQueue (client): The specified queue does not exist for this wsdl version. - <?xml version='1.0' encoding='utf-8'?>
+<ErrorResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><Error><Code>AWS.SimpleQueueService.NonExistentQueue</Code><Message>The specified queue does not exist for this wsdl version.</Message><Type>Sender</Type></Error><RequestId>RZSSLMS92MH6DOSNKEUL4BZESKF8WM1RQ5QQSCJS1DXTW49UAZFI</RequestId></ErrorResponse>
+2023-06-17 18:21:54 Error executing "ReceiveMessage" on "http://localstack:4566/000000000000/EMAIL_QUEUE"; AWS HTTP error: Client error: `POST http://localstack:4566/000000000000/EMAIL_QUEUE` resulted in a `400 Bad Request` response:
+<?xml version='1.0' encoding='utf-8'?>
+<ErrorResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><Error><Code>AW (truncated...)
+ AWS.SimpleQueueService.NonExistentQueue (client): The specified queue does not exist for this wsdl version. - <?xml version='1.0' encoding='utf-8'?>
+<ErrorResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><Error><Code>AWS.SimpleQueueService.NonExistentQueue</Code><Message>The specified queue does not exist for this wsdl version.</Message><Type>Sender</Type></Error><RequestId>W8AHTJV9DSIHYUKD9BRSJGG5E2K9JEW63837D1BQVLU6LWFYSFQE</RequestId></ErrorResponse>
+2023-06-17 18:22:04 Error executing "ReceiveMessage" on "http://localstack:4566/000000000000/EMAIL_QUEUE"; AWS HTTP error: Client error: `POST http://localstack:4566/000000000000/EMAIL_QUEUE` resulted in a `400 Bad Request` response:
+<?xml version='1.0' encoding='utf-8'?>
+<ErrorResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><Error><Code>AW (truncated...)
+ AWS.SimpleQueueService.NonExistentQueue (client): The specified queue does not exist for this wsdl version. - <?xml version='1.0' encoding='utf-8'?>
+<ErrorResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><Error><Code>AWS.SimpleQueueService.NonExistentQueue</Code><Message>The specified queue does not exist for this wsdl version.</Message><Type>Sender</Type></Error><RequestId>8K7N6E6T2C28M9H9056UY6538AJ8P8303A68TKNOXJPRBBWL1DX8</RequestId></ErrorResponse>
+2023-06-17 18:22:14 Error executing "ReceiveMessage" on "http://localstack:4566/000000000000/EMAIL_QUEUE"; AWS HTTP error: Client error: `POST http://localstack:4566/000000000000/EMAIL_QUEUE` resulted in a `400 Bad Request` response:
+<?xml version='1.0' encoding='utf-8'?>
+<ErrorResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><Error><Code>AW (truncated...)
+ AWS.SimpleQueueService.NonExistentQueue (client): The specified queue does not exist for this wsdl version. - <?xml version='1.0' encoding='utf-8'?>
+<ErrorResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><Error><Code>AWS.SimpleQueueService.NonExistentQueue</Code><Message>The specified queue does not exist for this wsdl version.</Message><Type>Sender</Type></Error><RequestId>ZHNAG10MO61TA748GD5HAJM0LAJ8YUBWYFH4UFLMI33HAGMV1ONL</RequestId></ErrorResponse>
+2023-06-17 18:24:55 Error executing "ReceiveMessage" on "http://localstack:4566/000000000000/EMAIL_QUEUE"; AWS HTTP error: Server error: `POST http://localstack:4566/000000000000/EMAIL_QUEUE` resulted in a `500 Internal Server Error` response  (server): 500 Internal Server Error - 
+2023-06-17 18:24:56 Error executing "ReceiveMessage" on "http://localstack:4566/000000000000/EMAIL_QUEUE"; AWS HTTP error: cURL error 7: Failed to connect to localstack port 4566: Connection refused (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for http://localstack:4566/000000000000/EMAIL_QUEUE
