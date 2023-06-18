@@ -1,14 +1,12 @@
 <h1>Projeto de Agenda de Contatos</h1>
 Este projeto é uma aplicação de Agenda de Contatos, desenvolvida com o objetivo de permitir que os usuários gerenciem seus contatos de forma simples e eficiente.
 
-<h2>Documentação</h2>
-A documentação completa do projeto pode ser encontrada <a href="http://localhost:8000/docs/index.html">aqui</a>(O projeto precisa estar de pé). Ela contém informações detalhadas sobre os endpoints da API, os parâmetros esperados, as respostas retornadas e exemplos de uso.
+O mesmo consiste em dois micro-serviços, um que cadastra o usuário com autenticação JWT e faz o CRUD de seus contatos, o outro faz o envio de emails. O projeto utiliza a fila SQS.
 
-Na documentação do projeto existem exemplos de request.
+<h2>Documentação</h2>
+A documentação completa do projeto pode ser encontrada <a href="http://localhost:8000/docs/index.html">aqui</a>(O projeto precisa estar de pé). Ela contém informações detalhadas sobre os endpoints da API, os parâmetros esperados, as respostas retornadas e exemplos de uso.s
 
 Na raiz do projeto temos um exemplo para se usar no insomnia caso prefira.
-
-Certifique-se de consultar a documentação para entender como utilizar corretamente a API e explorar todas as funcionalidades oferecidas pelo sistema.
 
 <h2>Configuração</h2>
 Para configurar e executar o projeto em seu ambiente local, siga as etapas abaixo:
@@ -24,7 +22,7 @@ Acesse o diretório do projeto:
 cd user_contact_book
 </code>
 
-Atualize o arquivo .env com as informações de configuração necessárias, como credenciais do banco de dados e outras configurações específicas do ambiente.
+Atualize o arquivo .env dos dois projetos com as informações de configuração necessárias, como credenciais do banco de dados e outras configurações específicas do ambiente.
 
 Certifique-se de que o script start.sh tenha permissões de execução. Caso não tenha, execute o seguinte comando:
 
