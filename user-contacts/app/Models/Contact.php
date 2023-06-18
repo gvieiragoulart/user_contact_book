@@ -9,23 +9,23 @@ class Contact extends Model
 {
     use HasFactory;
 
-    protected $fillable=[
+    protected $fillable = [
         'id',
         'user_id',
         'name',
         'second_name',
         'email',
-        'number'
+        'number',
     ];
 
     public $incrementing = false;
 
     protected $casts = [
-        'id'    => 'string',
+        'id' => 'string',
         'user_id' => 'string',
         'name' => 'string',
         'second_name' => 'string',
         'email' => 'string',
-        'number' => 'string'
+        'number' => 'string',
     ];
 }

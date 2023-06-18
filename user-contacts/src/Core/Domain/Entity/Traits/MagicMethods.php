@@ -18,6 +18,6 @@ trait MagicMethods
 
     public function id(): string
     {
-        return (string)$this->id;
+        return (string) $this->id;
     }
 }

@@ -11,7 +11,9 @@ class UserController extends Controller
 {
     /**
      * Registra um novo usuário.
+     *
      * @unauthenticated
+     *
      * @bodyParam name string required Nome do usuário. Example: João
      * @bodyParam password string required Senha do usuário. Example: 123456
      * @bodyParam email string required Email do usuário. Example: joao@teste.com

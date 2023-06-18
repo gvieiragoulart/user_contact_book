@@ -21,10 +21,8 @@ class SQSService
     public function sendMessage($message): void
     {
         $this->client->sendMessage([
-            'QueueUrl' => env('SQS_PREFIX') . '/' . env('SQS_QUEUE'),
+            'QueueUrl' => env('SQS_PREFIX').'/'.env('SQS_QUEUE'),
             'MessageBody' => $message,
         ]);
     }
-
-    
 }

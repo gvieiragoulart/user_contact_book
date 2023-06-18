@@ -29,7 +29,7 @@ class ContactEloquentRepositoryTest extends TestCase
         $this->assertInstanceOf(ContactRepositoryInterface::class, $repository);
         $this->assertInstanceOf(EntityContact::class, $response);
         $this->assertDatabaseHas('contacts', [
-            'name'  => $entity->name,
+            'name' => $entity->name,
         ]);
         $this->assertEquals($entity->name, $response->name);
         $this->assertEquals($entity->secondName, $response->secondName);

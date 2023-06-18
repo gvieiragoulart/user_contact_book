@@ -14,9 +14,11 @@ use Ramsey\Uuid\Uuid;
 class CreateContactUseCaseTest extends TestCase
 {
     public $mockRepo;
+
     public $mockEntity;
+
     public $mockInputDto;
-    
+
     public function testCreateNewContact()
     {
         $id = Uuid::uuid4()->toString();
@@ -49,7 +51,7 @@ class CreateContactUseCaseTest extends TestCase
         $useCase = new CreateContactUseCase($this->mockRepo);
         $response = $useCase->execute($mockInputDto);
 
-        $this->assertInstanceOf(CreateContactOutputDto::class,$response);
+        $this->assertInstanceOf(CreateContactOutputDto::class, $response);
         $this->assertEquals($response->id, $this->mockEntity->id());
         $this->assertEquals($response->userId, $this->mockEntity->userId);
         $this->assertEquals($response->name, $this->mockEntity->name);

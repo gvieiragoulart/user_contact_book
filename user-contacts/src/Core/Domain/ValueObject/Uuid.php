@@ -25,7 +25,8 @@ class Uuid
 
     private function validate()
     {
-        if(!RamseyUuid::isValid($this->value)) 
+        if (! RamseyUuid::isValid($this->value)) {
             throw new InvalidArgumentException('Uuid is invalid');
+        }
     }
 }

@@ -18,7 +18,7 @@ class User
     ) {
         $this->id = $this->id ? new Uuid($this->id) : Uuid::generate();
         $this->password = password_hash($this->password, PASSWORD_DEFAULT);
-        
+
         $this->validate();
     }
 

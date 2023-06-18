@@ -5,9 +5,9 @@ namespace App\Repositories\Eloquent;
 use App\Models\Contact as ModelsContact;
 use App\Repositories\Presenters\PaginationPresenter;
 use Core\Domain\Entity\Contact;
+use Core\Domain\Exception\NotFoundException;
 use Core\Domain\Repository\ContactRepositoryInterface;
 use Core\Domain\Repository\PaginationInterface;
-use Core\Domain\Exception\NotFoundException;
 
 class ContactRepository implements ContactRepositoryInterface
 {
@@ -20,9 +20,10 @@ class ContactRepository implements ContactRepositoryInterface
 
     public function create(Contact $contact): Contact
     {
-        $contact =  $this->model->create(
+        $contact = $this->model->create(
             $contact->toArray()
         );
+
         return $this->mapModelToEntity($contact);
     }
 
@@ -35,6 +36,7 @@ class ContactRepository implements ContactRepositoryInterface
             email: $data->email,
             number: $data->number
         );
+
         return $contact;
     }
 
@@ -43,6 +45,7 @@ class ContactRepository implements ContactRepositoryInterface
         if (! $category = $this->model->find($id)) {
             throw new NotFoundException('Category Not Found');
         }
+
         return $category->delete();
     }
 
@@ -61,14 +64,15 @@ class ContactRepository implements ContactRepositoryInterface
         $query->where('user_id', $userId);
         if ($filter) {
             $query->where(function ($query) use ($filter) {
-                $query->orWhere('name', 'like', '%' . $filter . '%');
-                $query->orWhere('second_name', 'like', '%' . $filter . '%');
-                $query->orWhere('email', 'like', '%' . $filter . '%');
-                $query->orWhere('number', 'like', '%' . $filter . '%');
+                $query->orWhere('name', 'like', '%'.$filter.'%');
+                $query->orWhere('second_name', 'like', '%'.$filter.'%');
+                $query->orWhere('email', 'like', '%'.$filter.'%');
+                $query->orWhere('number', 'like', '%'.$filter.'%');
             });
         }
 
         $paginator = $query->paginate($totalPage, ['*'], 'page', $page);
+
         return new PaginationPresenter($paginator);
     }
 
@@ -77,12 +81,13 @@ class ContactRepository implements ContactRepositoryInterface
         $query = $this->model->orderBy('created_at', $order);
         if ($filter) {
             $query->where(function ($query) use ($filter) {
-                $query->orWhere('name', 'like', '%' . $filter . '%');
-                $query->orWhere('second_name', 'like', '%' . $filter . '%');
-                $query->orWhere('email', 'like', '%' . $filter . '%');
-                $query->orWhere('phone', 'like', '%' . $filter . '%');
+                $query->orWhere('name', 'like', '%'.$filter.'%');
+                $query->orWhere('second_name', 'like', '%'.$filter.'%');
+                $query->orWhere('email', 'like', '%'.$filter.'%');
+                $query->orWhere('phone', 'like', '%'.$filter.'%');
             });
         }
+
         return $query->get()->all();
     }
 

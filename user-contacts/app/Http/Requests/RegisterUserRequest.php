@@ -34,10 +34,10 @@ class RegisterUserRequest extends FormRequest
                 'min:3',
                 'max:255',
                 'email',
-                'unique:users,email'
+                'unique:users,email',
             ],
             'password' => [
-                'required'
+                'required',
             ],
         ];
     }

@@ -23,7 +23,7 @@ class CreateContactRequest extends FormRequest
      */
     public function rules()
     {
-        return [                
+        return [
             'name' => [
                 'required',
                 'min:3',
@@ -39,12 +39,12 @@ class CreateContactRequest extends FormRequest
                 'min:3',
                 'max:100',
                 'email',
-                'unique:contacts,email'
+                'unique:contacts,email',
             ],
             'number' => [
                 'required',
                 'unique:contacts,number',
-                'regex:/^\(\d{2}\)\d{4,5}\d{4}$/'
+                'regex:/^\(\d{2}\)\d{4,5}\d{4}$/',
             ],
         ];
     }
@@ -55,5 +55,4 @@ class CreateContactRequest extends FormRequest
             'number.regex' => 'O campo número de telefone deve estar no formato (99) 999999999 ou (99) 99999999.',
         ];
     }
-
 }

@@ -1,13 +1,14 @@
 <?php
+
 namespace App\Services;
 
 use App\Exceptions\LoginException;
 use App\Helpers\JwtHelper;
 use Core\Domain\Repository\UserRepositoryInterface;
 use Illuminate\Support\Facades\Auth;
-use Tymon\JWTAuth\Facades\JWTAuth;
 
-class LoginService {
+class LoginService
+{
     protected UserRepositoryInterface $repository;
 
     public function __construct(UserRepositoryInterface $repository)
@@ -20,13 +21,15 @@ class LoginService {
      */
     public function execute(array $data): string
     {
-        if (!Auth::attempt(
+        if (! Auth::attempt(
             [
-                'email'    => $data['email'],
-                'password' => $data['password']
+                'email' => $data['email'],
+                'password' => $data['password'],
             ]
         )
-        ) throw new LoginException;
+        ) {
+            throw new LoginException;
+        }
 
         $user = $this->repository->getUserByEmail($data['email']);
 

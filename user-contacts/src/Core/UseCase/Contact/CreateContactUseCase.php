@@ -27,6 +27,7 @@ class CreateContactUseCase
         );
 
         $contact = $this->repository->create($contact);
+
         return new CreateContactOutputDto(
             id: $contact->id(),
             userId: $contact->userId,

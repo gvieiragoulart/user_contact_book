@@ -23,7 +23,7 @@ class UpdateContactRequest extends FormRequest
      */
     public function rules()
     {
-        return [                
+        return [
             'name' => [
                 'nullable',
                 'min:3',
@@ -38,7 +38,7 @@ class UpdateContactRequest extends FormRequest
                 'nullable',
                 'min:3',
                 'max:100',
-                'email'
+                'email',
             ],
             'number' => [
                 'nullable',

@@ -10,5 +10,6 @@ class CreateContactInputDto
         public ?string $secondName,
         public string $number,
         public string $email
-    ) {}
+    ) {
+    }
 }

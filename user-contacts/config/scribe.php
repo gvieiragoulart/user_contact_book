@@ -253,7 +253,7 @@ return [
     /*
      * Text to place in the "Introduction" section, right after the `description`. Markdown and HTML are supported.
      */
-    'intro_text' => <<<INTRO
+    'intro_text' => <<<'INTRO'
 Esta documentação visa fornecer todas as informações necessárias para trabalhar com nossa API.
 
 <aside>Ao rolar, você verá exemplos de código para trabalhar com a API em diferentes linguagens de programação na área escura à direita (ou como parte do conteúdo no celular).
@@ -270,7 +270,7 @@ INTRO
     'example_languages' => [
         'bash',
         'javascript',
-        'php'
+        'php',
     ],
 
     /*
@@ -321,7 +321,7 @@ INTRO
          * If an endpoint/subgroup is listed under a group it doesn't belong in, it will be ignored.
          * Note: you must include the initial '/' when writing an endpoint.
          */
-        'Aplicação' => [     
+        'Aplicação' => [
             'Registro' => [
                 'POST api/register',
             ],
@@ -444,5 +444,5 @@ INTRO
      * Tell Scribe which connections should be transacted here.
      * If you only use one db connection, you can leave this as is.
      */
-    'database_connections_to_transact' => [config('database.default')]
+    'database_connections_to_transact' => [config('database.default')],
 ];

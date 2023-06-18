@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Log;
 class RegisterUserUseCase
 {
     protected UserRepositoryInterface $repository;
+
     protected SQSService $sqsService;
 
     public function __construct(UserRepositoryInterface $repository, SQSService $sqsService)
@@ -50,4 +51,4 @@ class RegisterUserUseCase
             email: $user->email
         );
     }
-}    
+}
