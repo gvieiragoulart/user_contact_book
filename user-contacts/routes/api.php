@@ -5,13 +5,7 @@ use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
-Route::apiResource('contacts', ContactController::class)->middleware('auth:api');
 Route::post('register', UserController::class . '@register');
-
-Route::get('/', function () {
-    return response()->json(['message' => 'Welcome to the API']);
-});
-
 Route::group([
 
     'middleware' => 'api',
@@ -23,4 +17,9 @@ Route::group([
     Route::post('logout', AuthController::class . '@logout');
     Route::post('refresh', AuthController::class . '@refresh');
     Route::post('me', AuthController::class. '@me');
+});
+Route::apiResource('contacts', ContactController::class)->middleware('auth:api');
+
+Route::get('/', function () {
+    return response()->json(['message' => 'Welcome to the API']);
 });

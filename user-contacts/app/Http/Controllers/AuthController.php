@@ -16,6 +16,7 @@ class AuthController extends Controller
 
     /**
      * Faz o login do usuário.
+     * @unauthenticated
      * @bodyParam email string required Email do usuário. Example: joao@teste.com
      * @bodyParam password string required Senha do usuário. Example: 123456
      */
@@ -33,11 +34,19 @@ class AuthController extends Controller
         }
     }
 
+    /**
+     * Retorna os dados do usuário logado.
+     * @authenticated
+     */
     public function me()
     {
         return response()->json(auth()->user());
     }
 
+    /**
+     * Faz o logout do usuário.
+     * @authenticated
+     */
     public function logout()
     {
         auth()->logout();
@@ -45,6 +54,10 @@ class AuthController extends Controller
         return response()->json(['message' => 'Successfully logged out']);
     }
 
+    /**
+     * Atualiza o token do usuário.
+     * @authenticated
+     */
     public function refresh()
     {
         return $this->respondWithToken(auth()->refresh());

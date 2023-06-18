@@ -5,13 +5,13 @@
             "key": "baseUrl",
             "type": "string",
             "name": "string",
-            "value": "http:\/\/localhost:8000"
+            "value": "http:\/\/localhost:8000\/api"
         }
     ],
     "info": {
-        "name": "Laravel",
-        "_postman_id": "5b05900e-89ea-4ba0-8896-2411206fd724",
-        "description": "",
+        "name": "Sistema de Agenda de Contatos",
+        "_postman_id": "544b87bd-9cf4-4ea0-9b73-a08ef3a455f2",
+        "description": "O Sistema de Agenda de Contatos \u00e9 uma aplica\u00e7\u00e3o desenvolvida em API, utilizando o framework Laravel, que permite aos usu\u00e1rios autenticados gerenciar seus contatos de forma eficiente. O objetivo \u00e9 fornecer as opera\u00e7\u00f5es b\u00e1sicas de cria\u00e7\u00e3o, leitura, atualiza\u00e7\u00e3o e exclus\u00e3o (CRUD) para os contatos da agenda.",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
     "item": [
@@ -19,237 +19,6 @@
             "name": "Endpoints",
             "description": "",
             "item": [
-                {
-                    "name": "Busca todos os contatos do usu\u00e1rio logado com pagina\u00e7\u00e3o.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/contacts",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/contacts"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "Insere um novo contato para o usu\u00e1rio logado.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/contacts",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/contacts"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"name\":\"Jo\u00e3o\",\"second_name\":\"nrpixskvyvannyhashkmwqsd\",\"email\":\"joaosilva@teste.com\",\"number\":\"(11)999999999\",\"secondName\":\"Silva\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Busca um contato do usu\u00e1rio logado.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/contacts\/:id",
-                            "query": [
-                                {
-                                    "key": "id",
-                                    "value": "ecd4f3ff-7e8d-4358-ac74-f997955c7c86",
-                                    "description": "Id do contato.",
-                                    "disabled": false
-                                }
-                            ],
-                            "raw": "{{baseUrl}}\/api\/contacts\/:id?id=ecd4f3ff-7e8d-4358-ac74-f997955c7c86",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "voluptatem",
-                                    "description": "The ID of the contact."
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "Atualiza um contato do usu\u00e1rio logado.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/contacts\/:id",
-                            "query": [
-                                {
-                                    "key": "id",
-                                    "value": "ecd4f3ff-7e8d-4358-ac74-f997955c7c86",
-                                    "description": "Id do contato.",
-                                    "disabled": false
-                                }
-                            ],
-                            "raw": "{{baseUrl}}\/api\/contacts\/:id?id=ecd4f3ff-7e8d-4358-ac74-f997955c7c86",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "perspiciatis",
-                                    "description": "The ID of the contact."
-                                }
-                            ]
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"name\":\"Jo\u00e3o\",\"secondName\":\"Silva\",\"email\":\"joaosilva@teste.com\",\"number\":\"(11)999999999\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Deleta um contato do usu\u00e1rio logado.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/contacts\/:id",
-                            "query": [
-                                {
-                                    "key": "id",
-                                    "value": "ecd4f3ff-7e8d-4358-ac74-f997955c7c86",
-                                    "description": "Id do contato.",
-                                    "disabled": false
-                                }
-                            ],
-                            "raw": "{{baseUrl}}\/api\/contacts\/:id?id=ecd4f3ff-7e8d-4358-ac74-f997955c7c86",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "est",
-                                    "description": "The ID of the contact."
-                                }
-                            ]
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
                 {
                     "name": "Registra um novo usu\u00e1rio.",
                     "request": {
@@ -313,7 +82,7 @@
                     "response": []
                 },
                 {
-                    "name": "POST api\/auth\/logout",
+                    "name": "Faz o logout do usu\u00e1rio.",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -333,15 +102,12 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
                 {
-                    "name": "POST api\/auth\/refresh",
+                    "name": "Atualiza o token do usu\u00e1rio.",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -361,15 +127,12 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
                 {
-                    "name": "POST api\/auth\/me",
+                    "name": "Retorna os dados do usu\u00e1rio logado.",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -389,10 +152,223 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Busca todos os contatos do usu\u00e1rio logado com pagina\u00e7\u00e3o.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/contacts",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/contacts"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
                         }
+                    ]
+                },
+                {
+                    "name": "Insere um novo contato para o usu\u00e1rio logado.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/contacts",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/contacts"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"Jo\u00e3o\",\"second_name\":\"mxtnwvikjppycxfqjdjw\",\"email\":\"joaosilva@teste.com\",\"number\":\"(11)999999999\",\"secondName\":\"Silva\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Busca um contato do usu\u00e1rio logado.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/contacts\/:id",
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "ecd4f3ff-7e8d-4358-ac74-f997955c7c86",
+                                    "description": "Id do contato.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/contacts\/:id?id=ecd4f3ff-7e8d-4358-ac74-f997955c7c86",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "dicta",
+                                    "description": "The ID of the contact."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Atualiza um contato do usu\u00e1rio logado.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/contacts\/:id",
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "ecd4f3ff-7e8d-4358-ac74-f997955c7c86",
+                                    "description": "Id do contato.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/contacts\/:id?id=ecd4f3ff-7e8d-4358-ac74-f997955c7c86",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "voluptas",
+                                    "description": "The ID of the contact."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"Jo\u00e3o\",\"secondName\":\"Silva\",\"email\":\"joaosilva@teste.com\",\"number\":\"(11)999999999\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Deleta um contato do usu\u00e1rio logado.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/contacts\/:id",
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "ecd4f3ff-7e8d-4358-ac74-f997955c7c86",
+                                    "description": "Id do contato.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/contacts\/:id?id=ecd4f3ff-7e8d-4358-ac74-f997955c7c86",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "non",
+                                    "description": "The ID of the contact."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
                     },
                     "response": []
                 }
