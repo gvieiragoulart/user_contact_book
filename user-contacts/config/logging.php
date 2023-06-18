@@ -53,8 +53,17 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['single'],
+            'channels' => ['logstash', 'single'],
             'ignore_exceptions' => false,
+        ],
+
+        'logstash' => [
+            'driver' => 'custom',
+            'via' => \App\Services\Logging\LogstashLogger::class,
+            'level' => env('LOG_LEVEL', 'debug'),
+            'path' => storage_path('logs/laravel.log'),
+            'host' => env('LOGSTASH_HOST', 'logstash'),
+            'port' => env('LOGSTASH_PORT', 4718),
         ],
 
         'single' => [

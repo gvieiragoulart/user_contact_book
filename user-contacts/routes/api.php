@@ -3,8 +3,13 @@
 use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\AuthController;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
+Route::get('logtest', function () {
+    Log::warning("Teste de log");
+    return response()->json(['message' => 'Log gravado']);
+});
 Route::post('register', UserController::class . '@register');
 Route::group([
 
