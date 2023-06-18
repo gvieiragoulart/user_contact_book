@@ -15,10 +15,10 @@ class ContactEloquentRepositoryTest extends TestCase
     {
         $repository = new ContactRepository(new ModelContact());
 
-        $user = User::findOne()->first();
+        $user = User::factory()->create();
 
         $entity = new EntityContact(
-            userId: '9d277aae-832d-44bf-b96d-3751ffdbb802',
+            userId: $user->id,
             name: 'name',
             secondName: 'second_name',
             number: '12345678910',
@@ -32,9 +32,9 @@ class ContactEloquentRepositoryTest extends TestCase
             'name'  => $entity->name,
         ]);
         $this->assertEquals($entity->name, $response->name);
-        $this->assertEquals($entity->second_name, $response->second_name);
+        $this->assertEquals($entity->secondName, $response->secondName);
         $this->assertEquals($entity->email, $response->email);
-        $this->assertEquals($entity->phone, $response->phone);
-        $this->assertEquals($entity->user_id, $response->user_id);
+        $this->assertEquals($entity->number, $response->number);
+        $this->assertEquals($entity->userId, $response->userId);
     }
 }
