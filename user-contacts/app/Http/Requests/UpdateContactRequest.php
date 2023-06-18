@@ -39,11 +39,12 @@ class UpdateContactRequest extends FormRequest
                 'min:3',
                 'max:100',
                 'email',
+                'unique:contacts,email',
             ],
             'number' => [
                 'nullable',
-                'min:10',
-                'max:12',
+                'unique:contacts,number',
+                'regex:/^\(\d{2}\)\d{4,5}\d{4}$/',
             ],
         ];
     }

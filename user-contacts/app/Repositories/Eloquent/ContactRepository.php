@@ -29,33 +29,35 @@ class ContactRepository implements ContactRepositoryInterface
 
     public function update(Contact $data): Contact
     {
-        $contact = $this->findById($data->id);
+        if (! $contact = $this->model->find($data->id)) {
+            throw new NotFoundException('Category Not Found');
+        }
+
         $contact->update(
-            name: $data->name,
-            secondName: $data->secondName,
-            email: $data->email,
-            number: $data->number
+            $data->toArray()
         );
 
-        return $contact;
+        $contact->save();
+
+        return $this->mapModelToEntity($contact);
     }
 
     public function delete(string $id): bool
     {
-        if (! $category = $this->model->find($id)) {
+        if (! $contact = $this->model->find($id)) {
             throw new NotFoundException('Category Not Found');
         }
 
-        return $category->delete();
+        return $contact->delete();
     }
 
     public function findById(string $id): Contact
     {
-        if (! $category = $this->model->find($id)) {
+        if (! $contact = $this->model->find($id)) {
             throw new NotFoundException('Category Not Found');
         }
 
-        return $this->mapModelToEntity($category);
+        return $this->mapModelToEntity($contact);
     }
 
     public function paginate(string $userId, string $filter = '', string $order = 'DESC', int $page = 1, int $totalPage = 15): PaginationInterface

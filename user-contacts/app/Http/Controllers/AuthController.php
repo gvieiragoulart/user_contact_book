@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\LoginException;
 use App\Http\Requests\LoginRequest;
 use App\Services\LoginService;
+use Exception;
+use Illuminate\Support\Facades\Log;
 
 class AuthController extends Controller
 {
@@ -29,8 +32,12 @@ class AuthController extends Controller
 
             return $this->respondWithToken($token);
 
-        } catch (ServiceException $e) {
-            return $this->sendError($e->getMessage(), $e->getCode());
+        } catch (LoginException) {
+            return response()->json(['message' => 'Unauthorized'], 401);
+        } catch (Exception $exception) {
+            Log::error($exception->getMessage());
+
+            return response()->json(['message' => 'Algo deu errado'], 500);
         }
     }
 
