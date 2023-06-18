@@ -4,6 +4,10 @@ Este projeto é uma aplicação de Agenda de Contatos, desenvolvida com o objeti
 <h2>Documentação</h2>
 A documentação completa do projeto pode ser encontrada <a href="http://localhost:8000/docs/index.html">aqui</a>(O projeto precisa estar de pé). Ela contém informações detalhadas sobre os endpoints da API, os parâmetros esperados, as respostas retornadas e exemplos de uso.
 
+Na documentação do projeto existem exemplos de request.
+
+Na raiz do projeto temos um exemplo para se usar no insomnia caso prefira.
+
 Certifique-se de consultar a documentação para entender como utilizar corretamente a API e explorar todas as funcionalidades oferecidas pelo sistema.
 
 <h2>Configuração</h2>
