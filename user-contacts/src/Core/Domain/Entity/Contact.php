@@ -5,6 +5,7 @@ namespace Core\Domain\Entity;
 use Core\Domain\Entity\Traits\MagicMethods;
 use Core\Domain\Validation\DomainValidation;
 use Core\Domain\ValueObject\Uuid;
+use Illuminate\Http\UploadedFile;
 
 class Contact
 {
@@ -16,19 +17,21 @@ class Contact
         public string $name = '',
         public string $secondName = '',
         public string $number = '',
-        public string $email = ''
+        public string $email = '',
+        public ?string $imagePath = '',
     ) {
         $this->id = $this->id ? new Uuid($this->id) : Uuid::generate();
 
         $this->validate();
     }
 
-    public function update(?string $name, ?string $secondName, ?string $number, ?string $email)
+    public function update(?string $name, ?string $secondName, ?string $number, ?string $email, ?string $imagePath)
     {
         $this->name = $name ?? $this->name;
         $this->secondName = $secondName ?? $this->secondName;
         $this->number = $number ?? $this->number;
         $this->email = $email ?? $this->email;
+        $this->imagePath = $imagePath ?? $this->imagePath;
 
         $this->validate();
     }
@@ -42,6 +45,7 @@ class Contact
             'second_name' => $this->secondName,
             'number' => $this->number,
             'email' => $this->email,
+            'image_path' => $this->imagePath,
         ];
     }
 

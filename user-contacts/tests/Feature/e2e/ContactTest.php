@@ -52,7 +52,7 @@ class ContactTest extends TestCase
             'number' => '(16)123456789',
             'email' => 'joao@teste.com',
         ];
- 
+
         $response = $this->postJson($this->endpoint, $data, $this->headers);
 
         $response->assertStatus(Response::HTTP_OK);

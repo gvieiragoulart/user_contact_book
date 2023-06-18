@@ -56,7 +56,8 @@ class ContactController extends Controller
                 name: $request->name,
                 secondName: $request->secondName ?? '',
                 number: $request->number,
-                email: $request->email
+                email: $request->email,
+                image: $request->image ?? null
             )
         );
 

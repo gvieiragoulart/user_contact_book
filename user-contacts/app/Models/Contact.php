@@ -16,6 +16,7 @@ class Contact extends Model
         'second_name',
         'email',
         'number',
+        'image_path'
     ];
 
     public $incrementing = false;
@@ -27,5 +28,6 @@ class Contact extends Model
         'second_name' => 'string',
         'email' => 'string',
         'number' => 'string',
+        'image_path' => 'string'
     ];
 }

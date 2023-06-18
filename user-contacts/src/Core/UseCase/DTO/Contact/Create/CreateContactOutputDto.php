@@ -10,7 +10,8 @@ class CreateContactOutputDto
         public string $name,
         public string $secondName,
         public string $number,
-        public string $email
+        public string $email,
+        public string $imagePath,
     ) {
     }
 }
