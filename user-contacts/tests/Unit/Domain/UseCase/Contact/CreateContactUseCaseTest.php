@@ -2,6 +2,7 @@
 
 namespace Tests\Unit\Domain\UseCase\Contact;
 
+use App\Services\S3\S3Service;
 use Core\Domain\Entity\Contact;
 use Core\Domain\Repository\ContactRepositoryInterface;
 use Core\UseCase\Contact\CreateContactUseCase;
@@ -19,6 +20,8 @@ class CreateContactUseCaseTest extends TestCase
 
     public $mockInputDto;
 
+    public $mockS3;
+
     public function testCreateNewContact()
     {
         $id = Uuid::uuid4()->toString();
@@ -27,6 +30,7 @@ class CreateContactUseCaseTest extends TestCase
         $secondName = 'Second Name Contact';
         $number = '16123456789';
         $email = 'teste@teste.com';
+        $imagePath = '';
 
         $this->mockEntity = Mockery::mock(Contact::class);
         $this->mockEntity->id = $id;
@@ -35,20 +39,24 @@ class CreateContactUseCaseTest extends TestCase
         $this->mockEntity->secondName = $secondName;
         $this->mockEntity->number = $number;
         $this->mockEntity->email = $email;
+        $this->mockEntity->imagePath = $imagePath;
         $this->mockEntity->shouldReceive('id')->andReturn(Uuid::uuid4()->toString());
 
         $this->mockRepo = Mockery::mock(ContactRepositoryInterface::class);
         $this->mockRepo->shouldReceive('create')->andReturn($this->mockEntity);
+
+        $this->mockS3 = Mockery::mock(S3Service::class);
 
         $mockInputDto = new CreateContactInputDto(
             userId: $userId,
             name: $name,
             secondName: $secondName,
             number: $number,
-            email: $email
+            email: $email,
+            image: $imagePath,
         );
 
-        $useCase = new CreateContactUseCase($this->mockRepo);
+        $useCase = new CreateContactUseCase($this->mockRepo, $this->mockS3);
         $response = $useCase->execute($mockInputDto);
 
         $this->assertInstanceOf(CreateContactOutputDto::class, $response);

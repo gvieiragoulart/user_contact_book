@@ -18,7 +18,7 @@ class Contact
         public string $secondName = '',
         public string $number = '',
         public string $email = '',
-        public ?string $imagePath = '',
+        public string $imagePath = '',
     ) {
         $this->id = $this->id ? new Uuid($this->id) : Uuid::generate();
 

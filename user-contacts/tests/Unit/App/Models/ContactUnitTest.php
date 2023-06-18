@@ -22,7 +22,7 @@ class ContactUnitTest extends ModelTestCase
 
     public function fillables(): array
     {
-        return ['id', 'user_id', 'name', 'second_name', 'email', 'number'];
+        return ['id', 'user_id', 'name', 'second_name', 'email', 'number', 'image_path'];
     }
 
     protected function casts(): array
@@ -34,6 +34,7 @@ class ContactUnitTest extends ModelTestCase
             'second_name' => 'string',
             'email' => 'string',
             'number' => 'string',
+            'image_path' => 'string',
         ];
     }
 

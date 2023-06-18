@@ -22,7 +22,7 @@ class CreateContactUseCase
 
     public function execute(CreateContactInputDto $input): CreateContactOutputDto
     {
-        $imagePath = $this->s3Service->putObjectOnBucket($input->image);
+        (empty($input->image)) ?: $imagePath = $this->s3Service->putObjectOnBucket($input->image);
 
         $contact = new Contact(
             userId: $input->userId,
@@ -30,7 +30,7 @@ class CreateContactUseCase
             secondName: $input->secondName,
             number: $input->number,
             email: $input->email,
-            imagePath: $imagePath
+            imagePath: $imagePath ?? $input->image,
         );
 
         $contact = $this->repository->create($contact);
