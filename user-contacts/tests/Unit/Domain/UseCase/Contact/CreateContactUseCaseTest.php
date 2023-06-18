@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit\Domain\UseCase;
+namespace Tests\Unit\Domain\UseCase\Contact;
 
 use Core\Domain\Entity\Contact;
 use Core\Domain\Repository\ContactRepositoryInterface;
