@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Api;
+namespace Tests\Feature\e2e;
 
 use Illuminate\Http\Response;
 use Tests\TestCase;
