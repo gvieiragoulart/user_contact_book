@@ -44,7 +44,6 @@ class ContactUnityTest extends TestCase
             secondName: 'Second Name Contact Updated',
             number: '16123456787',
             email: 'testeupdated@teste.com',
-            imagePath: ''
         );
 
         $this->assertEquals($uuid, $contact->id());

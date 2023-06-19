@@ -25,13 +25,12 @@ class Contact
         $this->validate();
     }
 
-    public function update(?string $name, ?string $secondName, ?string $number, ?string $email, ?string $imagePath)
+    public function update(?string $name, ?string $secondName, ?string $number, ?string $email)
     {
         $this->name = $name ?? $this->name;
         $this->secondName = $secondName ?? $this->secondName;
         $this->number = $number ?? $this->number;
         $this->email = $email ?? $this->email;
-        $this->imagePath = $imagePath ?? $this->imagePath;
 
         $this->validate();
     }

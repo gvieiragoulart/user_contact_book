@@ -21,15 +21,12 @@ class UpdateContactUseCase
     public function execute(UpdateContactInputDto $input): UpdateContactOutputDto
     {
         $contact = $this->repository->findById($input->id);
- 
-        $imagePath = (empty($input->image)) ? $contact->imagePath : $this->s3Service->putObjectOnBucket($input->image);
 
         $contact->update(
             name: $input->name,
             secondName: $input->secondName,
             number: $input->number,
-            email: $input->email,
-            imagePath: $imagePath
+            email: $input->email
         );
 
         $contact = $this->repository->update($contact);

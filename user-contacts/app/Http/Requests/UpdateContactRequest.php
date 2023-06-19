@@ -45,11 +45,7 @@ class UpdateContactRequest extends FormRequest
                 'nullable',
                 'unique:contacts,number',
                 'regex:/^\(\d{2}\)\d{4,5}\d{4}$/',
-            ],
-            'image' => [
-                'nullable',
-                'image',
-            ],
+            ]
         ];
     }
 }
