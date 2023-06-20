@@ -12,29 +12,29 @@ Na raiz do projeto temos um exemplo para se usar no insomnia caso prefira.
 Para configurar e executar o projeto em seu ambiente local, siga as etapas abaixo:
 
 Clone o repositório para sua máquina local:
-<code class="language-bash">
+```bash
 git clone https://github.com/gvieiragoulart/user_contact_book.git
-</code>
+```
 
 Acesse o diretório do projeto:
 
-<code class="language-bash">
+```bash
 cd user_contact_book
-</code>
+```
 
 Atualize o arquivo .env dos dois projetos com as informações de configuração necessárias, como credenciais do banco de dados e outras configurações específicas do ambiente. Deixei alguns exemplos no .env.example caso prefira.
 
 Certifique-se de que o script start.sh tenha permissões de execução. Caso não tenha, execute o seguinte comando:
 
-<code class="language-bash">
+```bash
 chmod +x start.sh
-</code>
+```
 
 Execute o script start.sh para iniciar o projeto:
 
-<code class="language-bash">
+```bash
 ./start.sh
-</code>
+```
 
 O script start.sh cuidará de todas as etapas necessárias para iniciar a aplicação, incluindo a instalação das dependências, a configuração do banco de dados e a execução dos migrations.
 
