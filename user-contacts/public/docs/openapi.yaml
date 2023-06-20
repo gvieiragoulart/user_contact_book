@@ -35,39 +35,6 @@ paths:
                     example: 'Log gravado'
       tags:
         - Endpoints
-  /api/register:
-    post:
-      summary: 'Registra um novo usuário.'
-      operationId: registraUmNovoUsurio
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                  description: 'Nome do usuário.'
-                  example: João
-                email:
-                  type: string
-                  description: 'Email do usuário.'
-                  example: joao@teste.com
-                password:
-                  type: string
-                  description: 'Senha do usuário.'
-                  example: '123456'
-              required:
-                - name
-                - email
-                - password
-      security: []
   /api/auth/login:
     post:
       summary: 'Faz o login do usuário.'
@@ -201,7 +168,7 @@ paths:
                 second_name:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 100 characters.'
-                  example: pxtrlntxbhctkuqwzx
+                  example: z
                 email:
                   type: string
                   description: 'Email do contato.'
@@ -338,7 +305,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the contact.'
-        example: ullam
+        example: eveniet
         required: true
         schema:
           type: string

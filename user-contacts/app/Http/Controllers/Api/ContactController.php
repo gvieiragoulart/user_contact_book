@@ -16,13 +16,13 @@ use Core\UseCase\DTO\Contact\Create\CreateContactInputDto;
 use Core\UseCase\DTO\Contact\FindAll\FindAllContactsInputDto;
 use Core\UseCase\DTO\Contact\Update\UpdateContactInputDto;
 use Illuminate\Http\Request;
-use stdClass;
 use Symfony\Component\HttpFoundation\Response;
 
 class ContactController extends Controller
 {
     /**
      * Busca todos os contatos do usuário logado com paginação.
+     * @ContactResource App\Http\Resources\UserResource
      *
      * @header Authorization Bearer {token}
      */
@@ -53,6 +53,7 @@ class ContactController extends Controller
      * @bodyParam secondName string Nome do contato. Example: Silva
      * @bodyParam number string required Número do contato. Example: (11)999999999
      * @bodyParam email string required Email do contato. Example: joaosilva@teste.com
+     * @ContactResource App\Http\Resources\UserResource
      *
      * @header Authorization Bearer {token}
      * @header Content-Type multipart/form-data
@@ -81,6 +82,7 @@ class ContactController extends Controller
      * Busca um contato do usuário logado.
      *
      * @queryParam id required Id do contato. Example: ecd4f3ff-7e8d-4358-ac74-f997955c7c86
+     * @ContactResource App\Http\Resources\UserResource
      *
      * @header Authorization Bearer {token}
      */
@@ -104,6 +106,7 @@ class ContactController extends Controller
      * @bodyParam secondName string Nome do contato. Example: Silva
      * @bodyParam number string Número do contato. Example: (11)999999999
      * @bodyParam email string Email do contato. Example: joaosilva@teste.com
+     * @ContactResource App\Http\Resources\UserResource
      *
      * @header Authorization Bearer {token}
      */

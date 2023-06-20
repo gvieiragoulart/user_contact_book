@@ -76,9 +76,6 @@
                                                     <li class="tocify-item level-2" data-unique="endpoints-GETapi-logtest">
                                 <a href="#endpoints-GETapi-logtest">GET api/logtest</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-register">
-                                <a href="#endpoints-POSTapi-register">Registra um novo usuário.</a>
-                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-auth-login">
                                 <a href="#endpoints-POSTapi-auth-login">Faz o login do usuário.</a>
                             </li>
@@ -117,7 +114,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: June 19, 2023</li>
+        <li>Last updated: June 20, 2023</li>
     </ul>
 </div>
 
@@ -297,181 +294,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Example: <code>application/json</code></p>
             </div>
                         </form>
-
-                    <h2 id="endpoints-POSTapi-register">Registra um novo usuário.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-POSTapi-register">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://localhost:8000/api/api/register" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"name\": \"João\",
-    \"email\": \"joao@teste.com\",
-    \"password\": \"123456\"
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/api/register"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "name": "João",
-    "email": "joao@teste.com",
-    "password": "123456"
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-
-<div class="php-example">
-    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$response = $client-&gt;post(
-    'http://localhost:8000/api/api/register',
-    [
-        'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
-        ],
-        'json' =&gt; [
-            'name' =&gt; 'João',
-            'email' =&gt; 'joao@teste.com',
-            'password' =&gt; '123456',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre></div>
-
-</span>
-
-<span id="example-responses-POSTapi-register">
-</span>
-<span id="execution-results-POSTapi-register" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-register"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-register"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-POSTapi-register" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-register">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-POSTapi-register" data-method="POST"
-      data-path="api/register"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-register', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-register"
-                    onclick="tryItOut('POSTapi-register');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-register"
-                    onclick="cancelTryOut('POSTapi-register');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-register"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/register</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Content-Type"                data-endpoint="POSTapi-register"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept"                data-endpoint="POSTapi-register"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="name"                data-endpoint="POSTapi-register"
-               value="João"
-               data-component="body">
-    <br>
-<p>Nome do usuário. Example: <code>João</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="email"                data-endpoint="POSTapi-register"
-               value="joao@teste.com"
-               data-component="body">
-    <br>
-<p>Email do usuário. Example: <code>joao@teste.com</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="password"                data-endpoint="POSTapi-register"
-               value="123456"
-               data-component="body">
-    <br>
-<p>Senha do usuário. Example: <code>123456</code></p>
-        </div>
-        </form>
 
                     <h2 id="endpoints-POSTapi-auth-login">Faz o login do usuário.</h2>
 
@@ -1221,11 +1043,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
     --form "name=João" \
-    --form "second_name=pxtrlntxbhctkuqwzx" \
+    --form "second_name=z" \
     --form "email=joaosilva@teste.com" \
     --form "number=(11)999999999" \
     --form "secondName=Silva" \
-    --form "image=@/tmp/phpJPzjCn" </code></pre></div>
+    --form "image=@/tmp/phpQ6gF3W" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -1241,7 +1063,7 @@ const headers = {
 
 const body = new FormData();
 body.append('name', 'João');
-body.append('second_name', 'pxtrlntxbhctkuqwzx');
+body.append('second_name', 'z');
 body.append('email', 'joaosilva@teste.com');
 body.append('number', '(11)999999999');
 body.append('secondName', 'Silva');
@@ -1271,7 +1093,7 @@ $response = $client-&gt;post(
             ],
             [
                 'name' =&gt; 'second_name',
-                'contents' =&gt; 'pxtrlntxbhctkuqwzx'
+                'contents' =&gt; 'z'
             ],
             [
                 'name' =&gt; 'email',
@@ -1287,7 +1109,7 @@ $response = $client-&gt;post(
             ],
             [
                 'name' =&gt; 'image',
-                'contents' =&gt; fopen('/tmp/phpJPzjCn', 'r')
+                'contents' =&gt; fopen('/tmp/phpQ6gF3W', 'r')
             ],
         ],
     ]
@@ -1397,10 +1219,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="second_name"                data-endpoint="POSTapi-contacts"
-               value="pxtrlntxbhctkuqwzx"
+               value="z"
                data-component="body">
     <br>
-<p>Must be at least 3 characters. Must not be greater than 100 characters. Example: <code>pxtrlntxbhctkuqwzx</code></p>
+<p>Must be at least 3 characters. Must not be greater than 100 characters. Example: <code>z</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -1433,7 +1255,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be an image. Example: <code>/tmp/phpJPzjCn</code></p>
+<p>Must be an image. Example: <code>/tmp/phpQ6gF3W</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>secondName</code></b>&nbsp;&nbsp;
@@ -1462,7 +1284,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/api/contacts/ullam?id=ecd4f3ff-7e8d-4358-ac74-f997955c7c86" \
+    --get "http://localhost:8000/api/api/contacts/eveniet?id=ecd4f3ff-7e8d-4358-ac74-f997955c7c86" \
     --header "Authorization: Bearer {token}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -1470,7 +1292,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/api/contacts/ullam"
+    "http://localhost:8000/api/api/contacts/eveniet"
 );
 
 const params = {
@@ -1494,7 +1316,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://localhost:8000/api/api/contacts/ullam',
+    'http://localhost:8000/api/api/contacts/eveniet',
     [
         'headers' =&gt; [
             'Authorization' =&gt; 'Bearer {token}',
@@ -1616,10 +1438,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="id"                data-endpoint="GETapi-contacts--id-"
-               value="ullam"
+               value="eveniet"
                data-component="url">
     <br>
-<p>The ID of the contact. Example: <code>ullam</code></p>
+<p>The ID of the contact. Example: <code>eveniet</code></p>
             </div>
                         <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
                                     <div style="padding-left: 28px; clear: unset;">
@@ -1649,7 +1471,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/api/api/contacts/totam?id=ecd4f3ff-7e8d-4358-ac74-f997955c7c86" \
+    "http://localhost:8000/api/api/contacts/vel?id=ecd4f3ff-7e8d-4358-ac74-f997955c7c86" \
     --header "Authorization: Bearer {token}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -1664,7 +1486,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/api/contacts/totam"
+    "http://localhost:8000/api/api/contacts/vel"
 );
 
 const params = {
@@ -1696,7 +1518,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'http://localhost:8000/api/api/contacts/totam',
+    'http://localhost:8000/api/api/contacts/vel',
     [
         'headers' =&gt; [
             'Authorization' =&gt; 'Bearer {token}',
@@ -1812,10 +1634,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="id"                data-endpoint="PUTapi-contacts--id-"
-               value="totam"
+               value="vel"
                data-component="url">
     <br>
-<p>The ID of the contact. Example: <code>totam</code></p>
+<p>The ID of the contact. Example: <code>vel</code></p>
             </div>
                         <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
                                     <div style="padding-left: 28px; clear: unset;">
@@ -1890,7 +1712,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:8000/api/api/contacts/consequuntur?id=ecd4f3ff-7e8d-4358-ac74-f997955c7c86" \
+    "http://localhost:8000/api/api/contacts/porro?id=ecd4f3ff-7e8d-4358-ac74-f997955c7c86" \
     --header "Authorization: Bearer {token}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -1898,7 +1720,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/api/contacts/consequuntur"
+    "http://localhost:8000/api/api/contacts/porro"
 );
 
 const params = {
@@ -1922,7 +1744,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;delete(
-    'http://localhost:8000/api/api/contacts/consequuntur',
+    'http://localhost:8000/api/api/contacts/porro',
     [
         'headers' =&gt; [
             'Authorization' =&gt; 'Bearer {token}',
@@ -2028,10 +1850,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="id"                data-endpoint="DELETEapi-contacts--id-"
-               value="consequuntur"
+               value="porro"
                data-component="url">
     <br>
-<p>The ID of the contact. Example: <code>consequuntur</code></p>
+<p>The ID of the contact. Example: <code>porro</code></p>
             </div>
                         <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
                                     <div style="padding-left: 28px; clear: unset;">

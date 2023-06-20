@@ -41,61 +41,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer E43v8aVD51gbhfa6deZc6Pk'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/register
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Registra um novo usuário.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      name:
-        name: name
-        description: 'Nome do usuário.'
-        required: true
-        example: João
-        type: string
-        custom: []
-      email:
-        name: email
-        description: 'Email do usuário.'
-        required: true
-        example: joao@teste.com
-        type: string
-        custom: []
-      password:
-        name: password
-        description: 'Senha do usuário.'
-        required: true
-        example: '123456'
-        type: string
-        custom: []
-    cleanBodyParameters:
-      name: João
-      email: joao@teste.com
-      password: '123456'
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
+      - 'Bearer h3gc8Pk5a6af4Db6vVd1EZe'
     controller: null
     method: null
     route: null
@@ -175,7 +121,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vEd48fgaeb1D6akc53ZVh6P'
+      - 'Bearer vhkDacfP36a4V8b5Zdg6e1E'
     controller: null
     method: null
     route: null
@@ -209,7 +155,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8ge4kaZDV63dPh6vf1a5bEc'
+      - 'Bearer fVP1kahdc36e48E5DgZvab6'
     controller: null
     method: null
     route: null
@@ -243,7 +189,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 51vE4beDc3hVf6ak8d6PZga'
+      - 'Bearer DhcVdef6kbZP61va435E8ag'
     controller: null
     method: null
     route: null
@@ -286,7 +232,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer hekDZvaE3a51dPf66cb4V8g'
+      - 'Bearer ab86VvDdP6cEe3fgh1Z5ka4'
     controller: null
     method: null
     route: null
@@ -324,7 +270,7 @@ endpoints:
         name: second_name
         description: 'Must be at least 3 characters. Must not be greater than 100 characters.'
         required: false
-        example: pxtrlntxbhctkuqwzx
+        example: z
         type: string
         custom: []
       email:
@@ -357,7 +303,7 @@ endpoints:
         custom: []
     cleanBodyParameters:
       name: João
-      second_name: pxtrlntxbhctkuqwzx
+      second_name: z
       email: joaosilva@teste.com
       number: (11)999999999
       secondName: Silva
@@ -368,7 +314,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6a8e6fkh41gdDc53vVZPbaE'
+      - 'Bearer 86k4dbevgEZ3VPfcha61aD5'
     controller: null
     method: null
     route: null
@@ -395,11 +341,11 @@ endpoints:
         name: id
         description: 'The ID of the contact.'
         required: true
-        example: ullam
+        example: eveniet
         type: string
         custom: []
     cleanUrlParameters:
-      id: ullam
+      id: eveniet
     queryParameters:
       id:
         name: id
@@ -427,7 +373,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dP5ba6hZ8gcDVa4e13Ek6fv'
+      - 'Bearer hf36eZ1vk5dEPgcDV46aa8b'
     controller: null
     method: null
     route: null
@@ -455,11 +401,11 @@ endpoints:
         name: id
         description: 'The ID of the contact.'
         required: true
-        example: totam
+        example: vel
         type: string
         custom: []
     cleanUrlParameters:
-      id: totam
+      id: vel
     queryParameters:
       id:
         name: id
@@ -510,7 +456,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Defk1Z85h63E6dg4VaacPbv'
+      - 'Bearer gaVfEhc663D5bak8Ze1P4vd'
     controller: null
     method: null
     route: null
@@ -537,11 +483,11 @@ endpoints:
         name: id
         description: 'The ID of the contact.'
         required: true
-        example: consequuntur
+        example: porro
         type: string
         custom: []
     cleanUrlParameters:
-      id: consequuntur
+      id: porro
     queryParameters:
       id:
         name: id
@@ -560,7 +506,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 61Efb46hcZke8Vv35DgaPad'
+      - 'Bearer 65vadaeb6E8gZ3P4hc1DkVf'
     controller: null
     method: null
     route: null

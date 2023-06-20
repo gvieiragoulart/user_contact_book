@@ -19,6 +19,8 @@ class UserController extends Controller
      * @bodyParam name string required Nome do usuário. Example: João
      * @bodyParam password string required Senha do usuário. Example: 123456
      * @bodyParam email string required Email do usuário. Example: joao@teste.com
+     * 
+     * @apiResourceCollection App\Http\Resources\UserResource
      */
     public function register(RegisterUserRequest $request, RegisterUserUseCase $useCase)
     {
