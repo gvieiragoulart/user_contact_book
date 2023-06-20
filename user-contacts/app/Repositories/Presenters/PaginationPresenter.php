@@ -34,6 +34,11 @@ class PaginationPresenter implements PaginationInterface
         return $this->paginator->total() ?? 0;
     }
 
+    public function nextPageUrl(): string
+    {
+        return $this->paginator->nextPageUrl() ?? '';
+    }
+
     public function lastPage(): int
     {
         return $this->paginator->lastPage() ?? 0;

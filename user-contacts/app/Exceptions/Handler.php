@@ -2,6 +2,7 @@
 
 namespace App\Exceptions;
 
+use Core\Domain\Exception\NotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 
@@ -46,5 +47,14 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
             //
         });
+    }
+
+    public function render($request, Throwable $exception)
+    {
+        if ($exception instanceof NotFoundException) {
+            return response()->json(['error' => $exception->getMessage()], $exception->getCode());
+        }
+
+        return parent::render($request, $exception);
     }
 }

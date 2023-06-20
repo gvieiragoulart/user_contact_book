@@ -8,6 +8,8 @@ use Illuminate\Http\Response;
 use Tests\TestCase;
 use Tests\Traits\WithoutMiddlewareTrait;
 
+use function PHPSTORM_META\map;
+
 class ContactTest extends TestCase
 {
     use WithoutMiddlewareTrait;
@@ -55,7 +57,7 @@ class ContactTest extends TestCase
 
         $response = $this->postJson($this->endpoint, $data, $this->headers);
 
-        $response->assertStatus(Response::HTTP_OK);
+        $response->assertStatus(Response::HTTP_CREATED);
         $this->assertDatabaseHas('contacts', [
             'name' => $data['name'],
             'email' => $data['email'],
@@ -83,11 +85,15 @@ class ContactTest extends TestCase
 
         $response->assertStatus(Response::HTTP_OK);
         $response->assertJsonStructure([
-            'id',
-            'name',
-            'secondName',
-            'number',
-            'email',
+            'message',
+            'content' => [
+                'id',
+                'name',
+                'secondName',
+                'number',
+                'email',
+                'imagePath'
+            ],
         ]);
     }
 
@@ -101,16 +107,21 @@ class ContactTest extends TestCase
 
         $response->assertStatus(Response::HTTP_OK);
         $response->assertJsonStructure([
-            'items',
+            'message',
             'total',
-            'current_page',
-            'last_page',
-            'first_page',
-            'per_page',
-            'to',
-            'from',
+            'nextPageUrl',
+            'content' => [
+                '*' => [
+                    'id',
+                    'name',
+                    'secondName',
+                    'number',
+                    'email',
+                    'imagePath'
+                ],
+            ],
         ]);
-        $response->assertJsonCount(15, 'items');
+        $response->assertJsonCount(15, 'content');
     }
 
     public function testDelete()

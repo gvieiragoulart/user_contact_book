@@ -61,9 +61,9 @@ class CreateContactUseCaseTest extends TestCase
 
         $this->assertInstanceOf(CreateContactOutputDto::class, $response);
         $this->assertEquals($response->id, $this->mockEntity->id());
-        $this->assertEquals($response->userId, $this->mockEntity->userId);
+        $this->assertEquals($response->user_id, $this->mockEntity->userId);
         $this->assertEquals($response->name, $this->mockEntity->name);
-        $this->assertEquals($response->secondName, $this->mockEntity->secondName);
+        $this->assertEquals($response->second_name, $this->mockEntity->secondName);
         $this->assertEquals($response->number, $this->mockEntity->number);
         $this->assertEquals($response->email, $this->mockEntity->email);
 

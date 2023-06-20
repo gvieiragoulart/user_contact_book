@@ -6,9 +6,9 @@ class ContactOutputDto
 {
     public function __construct(
         public string $id,
-        public string $userId,
+        public string $user_id,
         public string $name,
-        public string $secondName,
+        public string $second_name,
         public string $number,
         public string $email
     ) {

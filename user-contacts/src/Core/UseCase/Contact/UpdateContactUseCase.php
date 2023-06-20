@@ -33,12 +33,12 @@ class UpdateContactUseCase
 
         return new UpdateContactOutputDto(
             id: $contact->id(),
-            userId: $contact->userId,
+            user_id: $contact->userId,
             name: $contact->name,
-            secondName: $contact->secondName,
+            second_name: $contact->secondName,
             number: $contact->number,
             email: $contact->email,
-            imagePath: $contact->imagePath ?? '',
+            image_path: $contact->imagePath ?? '',
         );
     }
 }

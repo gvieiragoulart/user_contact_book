@@ -8,6 +8,7 @@ use Core\Domain\Entity\Contact;
 use Core\Domain\Exception\NotFoundException;
 use Core\Domain\Repository\ContactRepositoryInterface;
 use Core\Domain\Repository\PaginationInterface;
+use Illuminate\Database\Eloquent\Collection;
 
 class ContactRepository implements ContactRepositoryInterface
 {
@@ -30,7 +31,7 @@ class ContactRepository implements ContactRepositoryInterface
     public function update(Contact $data): Contact
     {
         if (! $contact = $this->model->find($data->id)) {
-            throw new NotFoundException('Category Not Found');
+            throw new NotFoundException();
         }
 
         $contact->update(
@@ -45,7 +46,7 @@ class ContactRepository implements ContactRepositoryInterface
     public function delete(string $id): bool
     {
         if (! $contact = $this->model->find($id)) {
-            throw new NotFoundException('Category Not Found');
+            throw new NotFoundException();
         }
 
         return $contact->delete();
@@ -54,7 +55,7 @@ class ContactRepository implements ContactRepositoryInterface
     public function findById(string $id): Contact
     {
         if (! $contact = $this->model->find($id)) {
-            throw new NotFoundException('Category Not Found');
+            throw new NotFoundException();
         }
 
         return $this->mapModelToEntity($contact);
@@ -73,9 +74,12 @@ class ContactRepository implements ContactRepositoryInterface
             });
         }
 
-        $paginator = $query->paginate($totalPage, ['*'], 'page', $page);
+        $pagination =  $query->paginate(
+            perPage: $totalPage,
+            page: $page
+        );
 
-        return new PaginationPresenter($paginator);
+        return new PaginationPresenter($pagination);
     }
 
     public function findAll(string $filter = '', string $order = 'DESC'): array

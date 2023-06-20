@@ -6,6 +6,7 @@ use App\Helpers\JwtHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateContactRequest;
 use App\Http\Requests\UpdateContactRequest;
+use App\Http\Resources\ContactResource;
 use Core\UseCase\Contact\CreateContactUseCase;
 use Core\UseCase\Contact\DeleteContactUseCase;
 use Core\UseCase\Contact\FindAllContactUseCase;
@@ -15,6 +16,8 @@ use Core\UseCase\DTO\Contact\Create\CreateContactInputDto;
 use Core\UseCase\DTO\Contact\FindAll\FindAllContactsInputDto;
 use Core\UseCase\DTO\Contact\Update\UpdateContactInputDto;
 use Illuminate\Http\Request;
+use stdClass;
+use Symfony\Component\HttpFoundation\Response;
 
 class ContactController extends Controller
 {
@@ -35,7 +38,12 @@ class ContactController extends Controller
             )
         );
 
-        return response()->json($contacts);
+        return $this->sendPaginatedData(
+            message: __('controller.basicCrud.index', ['value' => 'Companies']),
+            total: $contacts->total,
+            nextPage: $contacts->next_page_url,
+            data: ContactResource::collection($contacts->items)
+        );
     }
 
     /**
@@ -47,6 +55,7 @@ class ContactController extends Controller
      * @bodyParam email string required Email do contato. Example: joaosilva@teste.com
      *
      * @header Authorization Bearer {token}
+     * @header Content-Type multipart/form-data
      */
     public function store(CreateContactRequest $request, CreateContactUseCase $useCase)
     {
@@ -61,7 +70,11 @@ class ContactController extends Controller
             )
         );
 
-        return response()->json($contact);
+        return $this->sendDataWithMessage(
+            message: __('controller.basicCrud.create', ['value' => 'Company']),
+            data: ContactResource::make($contact),
+            statusCode: Response::HTTP_CREATED
+        );
     }
 
     /**
@@ -75,7 +88,11 @@ class ContactController extends Controller
     {
         $contact = $useCase->execute($id);
 
-        return response()->json($contact);
+        return $this->sendDataWithMessage(
+            message: __('controller.basicCrud.create', ['value' => 'Company']),
+            data: ContactResource::make($contact),
+            statusCode: Response::HTTP_OK
+        );
     }
 
     /**
@@ -104,7 +121,11 @@ class ContactController extends Controller
             )
         );
 
-        return response()->json($contact);
+        return $this->sendDataWithMessage(
+            message: __('controller.basicCrud.create', ['value' => 'Company']),
+            data: ContactResource::make($contact),
+            statusCode: Response::HTTP_OK
+        );
     }
 
     /**
@@ -118,6 +139,9 @@ class ContactController extends Controller
     {
         $useCase->execute($id);
 
-        return response()->json(['message' => 'Contact deleted successfully']);
+        return $this->sendMessage(
+            message: __('controller.basicCrud.create', ['value' => 'Company']),
+            statusCode: Response::HTTP_OK
+        );
     }
 }

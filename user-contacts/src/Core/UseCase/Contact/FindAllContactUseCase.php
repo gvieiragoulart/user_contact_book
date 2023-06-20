@@ -28,6 +28,7 @@ class FindAllContactUseCase
         return new FindAllContactsOutputDto(
             items: $contacts->items(),
             total: $contacts->total(),
+            next_page_url: $contacts->nextPageUrl(),
             current_page: $contacts->currentPage(),
             last_page: $contacts->lastPage(),
             first_page: $contacts->firstPage(),

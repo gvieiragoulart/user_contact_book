@@ -11,6 +11,8 @@ interface PaginationInterface
 
     public function total(): int;
 
+    public function nextPageUrl(): string;
+
     public function lastPage(): int;
 
     public function firstPage(): int;

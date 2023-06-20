@@ -5,6 +5,51 @@ description: ''
 endpoints:
   -
     httpMethods:
+      - GET
+    uri: api/logtest
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"message":"Log gravado"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '59'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer E43v8aVD51gbhfa6deZc6Pk'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
       - POST
     uri: api/register
     metadata:
@@ -132,7 +177,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer faZd8kg1be66EDP3ha4Vcv5'
+      - 'Bearer vEd48fgaeb1D6akc53ZVh6P'
     controller: null
     method: null
     route: null
@@ -166,7 +211,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer E3Z6Pkgfecad58b6V4hvDa1'
+      - 'Bearer 8ge4kaZDV63dPh6vf1a5bEc'
     controller: null
     method: null
     route: null
@@ -200,7 +245,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Ekg6eDf8Zd5aVa3P1hb64vc'
+      - 'Bearer 51vE4beDc3hVf6ak8d6PZga'
     controller: null
     method: null
     route: null
@@ -243,7 +288,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Da5g4Ecd63hPvbeVZ6k18af'
+      - 'Bearer hekDZvaE3a51dPf66cb4V8g'
     controller: null
     method: null
     route: null
@@ -263,7 +308,7 @@ endpoints:
       custom: []
     headers:
       Authorization: 'Bearer {token}'
-      Content-Type: application/json
+      Content-Type: multipart/form-data
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
@@ -281,7 +326,7 @@ endpoints:
         name: second_name
         description: 'Must be at least 3 characters. Must not be greater than 100 characters.'
         required: false
-        example: mxtnwvikjppycxfqjdjw
+        example: pxtrlntxbhctkuqwzx
         type: string
         custom: []
       email:
@@ -298,6 +343,13 @@ endpoints:
         example: (11)999999999
         type: string
         custom: []
+      image:
+        name: image
+        description: 'Must be an image.'
+        required: false
+        example: null
+        type: file
+        custom: []
       secondName:
         name: secondName
         description: 'Nome do contato.'
@@ -307,17 +359,18 @@ endpoints:
         custom: []
     cleanBodyParameters:
       name: João
-      second_name: mxtnwvikjppycxfqjdjw
+      second_name: pxtrlntxbhctkuqwzx
       email: joaosilva@teste.com
       number: (11)999999999
       secondName: Silva
-    fileParameters: []
+    fileParameters:
+      image: null
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer fda1VZ5h6e8Ev6PcD4b3agk'
+      - 'Bearer 6a8e6fkh41gdDc53vVZPbaE'
     controller: null
     method: null
     route: null
@@ -344,11 +397,11 @@ endpoints:
         name: id
         description: 'The ID of the contact.'
         required: true
-        example: dicta
+        example: ullam
         type: string
         custom: []
     cleanUrlParameters:
-      id: dicta
+      id: ullam
     queryParameters:
       id:
         name: id
@@ -376,7 +429,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer baDEV6vhkcdP514ef6a3Zg8'
+      - 'Bearer dP5ba6hZ8gcDVa4e13Ek6fv'
     controller: null
     method: null
     route: null
@@ -404,11 +457,11 @@ endpoints:
         name: id
         description: 'The ID of the contact.'
         required: true
-        example: voluptas
+        example: totam
         type: string
         custom: []
     cleanUrlParameters:
-      id: voluptas
+      id: totam
     queryParameters:
       id:
         name: id
@@ -459,7 +512,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kc18bZvgPae5h4aE6Vdf6D3'
+      - 'Bearer Defk1Z85h63E6dg4VaacPbv'
     controller: null
     method: null
     route: null
@@ -486,11 +539,11 @@ endpoints:
         name: id
         description: 'The ID of the contact.'
         required: true
-        example: non
+        example: consequuntur
         type: string
         custom: []
     cleanUrlParameters:
-      id: non
+      id: consequuntur
     queryParameters:
       id:
         name: id
@@ -509,7 +562,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ac6dah86PZbfgD5v14V3Eek'
+      - 'Bearer 61Efb46hcZke8Vv35DgaPad'
     controller: null
     method: null
     route: null

@@ -16,7 +16,7 @@ class UserTest extends TestCase
         ];
 
         $response = $this->postJson('api/register', $data);
-        $response->assertStatus(Response::HTTP_OK);
+        $response->assertStatus(Response::HTTP_CREATED);
         $this->assertDatabaseHas('users', [
             'name' => $data['name'],
             'email' => $data['email'],

@@ -3,6 +3,7 @@
 namespace Core\Domain\Repository;
 
 use Core\Domain\Entity\Contact;
+use Illuminate\Database\Eloquent\Collection;
 
 interface ContactRepositoryInterface
 {

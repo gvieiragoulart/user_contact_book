@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterUserRequest;
+use App\Http\Resources\UserResource;
 use Core\UseCase\DTO\Register\RegisterUserInputDto;
 use Core\UseCase\User\RegisterUserUseCase;
+use Symfony\Component\HttpFoundation\Response;
 
 class UserController extends Controller
 {
@@ -28,6 +30,10 @@ class UserController extends Controller
             )
         );
 
-        return response()->json($user);
+        return $this->sendDataWithMessage(
+            message: __('controller.basicCrud.create', ['value' => 'Company']),
+            data: UserResource::make($user),
+            statusCode: Response::HTTP_CREATED
+        );
     }
 }

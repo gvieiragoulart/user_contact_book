@@ -73,7 +73,10 @@
                     <a href="#endpoints">Endpoints</a>
                 </li>
                                     <ul id="tocify-subheader-endpoints" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-register">
+                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-logtest">
+                                <a href="#endpoints-GETapi-logtest">GET api/logtest</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-register">
                                 <a href="#endpoints-POSTapi-register">Registra um novo usuário.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-auth-login">
@@ -114,7 +117,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: June 17, 2023</li>
+        <li>Last updated: June 19, 2023</li>
     </ul>
 </div>
 
@@ -139,7 +142,163 @@ Você pode mudar o idioma usado com as guias no canto superior direito (ou no me
 
     
 
-                                <h2 id="endpoints-POSTapi-register">Registra um novo usuário.</h2>
+                                <h2 id="endpoints-GETapi-logtest">GET api/logtest</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-logtest">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:8000/api/api/logtest" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/api/logtest"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/api/logtest',
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-logtest">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 59
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Log gravado&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-logtest" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-logtest"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-logtest"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-logtest" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-logtest">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-logtest" data-method="GET"
+      data-path="api/logtest"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-logtest', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-logtest"
+                    onclick="tryItOut('GETapi-logtest');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-logtest"
+                    onclick="cancelTryOut('GETapi-logtest');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-logtest"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/logtest</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="GETapi-logtest"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="GETapi-logtest"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="GETapi-logtest"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="endpoints-POSTapi-register">Registra um novo usuário.</h2>
 
 <p>
 </p>
@@ -1059,16 +1218,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request POST \
     "http://localhost:8000/api/api/contacts" \
     --header "Authorization: Bearer {token}" \
-    --header "Content-Type: application/json" \
+    --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --data "{
-    \"name\": \"João\",
-    \"second_name\": \"mxtnwvikjppycxfqjdjw\",
-    \"email\": \"joaosilva@teste.com\",
-    \"number\": \"(11)999999999\",
-    \"secondName\": \"Silva\"
-}"
-</code></pre></div>
+    --form "name=João" \
+    --form "second_name=pxtrlntxbhctkuqwzx" \
+    --form "email=joaosilva@teste.com" \
+    --form "number=(11)999999999" \
+    --form "secondName=Silva" \
+    --form "image=@/tmp/phpJPzjCn" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -1078,22 +1235,22 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 const headers = {
     "Authorization": "Bearer {token}",
-    "Content-Type": "application/json",
+    "Content-Type": "multipart/form-data",
     "Accept": "application/json",
 };
 
-let body = {
-    "name": "João",
-    "second_name": "mxtnwvikjppycxfqjdjw",
-    "email": "joaosilva@teste.com",
-    "number": "(11)999999999",
-    "secondName": "Silva"
-};
+const body = new FormData();
+body.append('name', 'João');
+body.append('second_name', 'pxtrlntxbhctkuqwzx');
+body.append('email', 'joaosilva@teste.com');
+body.append('number', '(11)999999999');
+body.append('secondName', 'Silva');
+body.append('image', document.querySelector('input[name="image"]').files[0]);
 
 fetch(url, {
     method: "POST",
     headers,
-    body: JSON.stringify(body),
+    body,
 }).then(response =&gt; response.json());</code></pre></div>
 
 
@@ -1104,15 +1261,34 @@ $response = $client-&gt;post(
     [
         'headers' =&gt; [
             'Authorization' =&gt; 'Bearer {token}',
-            'Content-Type' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
             'Accept' =&gt; 'application/json',
         ],
-        'json' =&gt; [
-            'name' =&gt; 'João',
-            'second_name' =&gt; 'mxtnwvikjppycxfqjdjw',
-            'email' =&gt; 'joaosilva@teste.com',
-            'number' =&gt; '(11)999999999',
-            'secondName' =&gt; 'Silva',
+        'multipart' =&gt; [
+            [
+                'name' =&gt; 'name',
+                'contents' =&gt; 'João'
+            ],
+            [
+                'name' =&gt; 'second_name',
+                'contents' =&gt; 'pxtrlntxbhctkuqwzx'
+            ],
+            [
+                'name' =&gt; 'email',
+                'contents' =&gt; 'joaosilva@teste.com'
+            ],
+            [
+                'name' =&gt; 'number',
+                'contents' =&gt; '(11)999999999'
+            ],
+            [
+                'name' =&gt; 'secondName',
+                'contents' =&gt; 'Silva'
+            ],
+            [
+                'name' =&gt; 'image',
+                'contents' =&gt; fopen('/tmp/phpJPzjCn', 'r')
+            ],
         ],
     ]
 );
@@ -1141,7 +1317,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <form id="form-POSTapi-contacts" data-method="POST"
       data-path="api/contacts"
       data-authed="1"
-      data-hasfiles="0"
+      data-hasfiles="1"
       data-isarraybody="0"
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('POSTapi-contacts', this);">
@@ -1187,10 +1363,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="Content-Type"                data-endpoint="POSTapi-contacts"
-               value="application/json"
+               value="multipart/form-data"
                data-component="header">
     <br>
-<p>Example: <code>application/json</code></p>
+<p>Example: <code>multipart/form-data</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -1221,10 +1397,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="second_name"                data-endpoint="POSTapi-contacts"
-               value="mxtnwvikjppycxfqjdjw"
+               value="pxtrlntxbhctkuqwzx"
                data-component="body">
     <br>
-<p>Must be at least 3 characters. Must not be greater than 100 characters. Example: <code>mxtnwvikjppycxfqjdjw</code></p>
+<p>Must be at least 3 characters. Must not be greater than 100 characters. Example: <code>pxtrlntxbhctkuqwzx</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -1247,6 +1423,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="body">
     <br>
 <p>Número do contato. Example: <code>(11)999999999</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>image</code></b>&nbsp;&nbsp;
+<small>file</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="file" style="display: none"
+               name="image"                data-endpoint="POSTapi-contacts"
+               value=""
+               data-component="body">
+    <br>
+<p>Must be an image. Example: <code>/tmp/phpJPzjCn</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>secondName</code></b>&nbsp;&nbsp;
@@ -1275,7 +1462,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/api/contacts/dicta?id=ecd4f3ff-7e8d-4358-ac74-f997955c7c86" \
+    --get "http://localhost:8000/api/api/contacts/ullam?id=ecd4f3ff-7e8d-4358-ac74-f997955c7c86" \
     --header "Authorization: Bearer {token}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -1283,7 +1470,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/api/contacts/dicta"
+    "http://localhost:8000/api/api/contacts/ullam"
 );
 
 const params = {
@@ -1307,7 +1494,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://localhost:8000/api/api/contacts/dicta',
+    'http://localhost:8000/api/api/contacts/ullam',
     [
         'headers' =&gt; [
             'Authorization' =&gt; 'Bearer {token}',
@@ -1429,10 +1616,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="id"                data-endpoint="GETapi-contacts--id-"
-               value="dicta"
+               value="ullam"
                data-component="url">
     <br>
-<p>The ID of the contact. Example: <code>dicta</code></p>
+<p>The ID of the contact. Example: <code>ullam</code></p>
             </div>
                         <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
                                     <div style="padding-left: 28px; clear: unset;">
@@ -1462,7 +1649,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/api/api/contacts/voluptas?id=ecd4f3ff-7e8d-4358-ac74-f997955c7c86" \
+    "http://localhost:8000/api/api/contacts/totam?id=ecd4f3ff-7e8d-4358-ac74-f997955c7c86" \
     --header "Authorization: Bearer {token}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -1477,7 +1664,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/api/contacts/voluptas"
+    "http://localhost:8000/api/api/contacts/totam"
 );
 
 const params = {
@@ -1509,7 +1696,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'http://localhost:8000/api/api/contacts/voluptas',
+    'http://localhost:8000/api/api/contacts/totam',
     [
         'headers' =&gt; [
             'Authorization' =&gt; 'Bearer {token}',
@@ -1625,10 +1812,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="id"                data-endpoint="PUTapi-contacts--id-"
-               value="voluptas"
+               value="totam"
                data-component="url">
     <br>
-<p>The ID of the contact. Example: <code>voluptas</code></p>
+<p>The ID of the contact. Example: <code>totam</code></p>
             </div>
                         <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
                                     <div style="padding-left: 28px; clear: unset;">
@@ -1703,7 +1890,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:8000/api/api/contacts/non?id=ecd4f3ff-7e8d-4358-ac74-f997955c7c86" \
+    "http://localhost:8000/api/api/contacts/consequuntur?id=ecd4f3ff-7e8d-4358-ac74-f997955c7c86" \
     --header "Authorization: Bearer {token}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -1711,7 +1898,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/api/contacts/non"
+    "http://localhost:8000/api/api/contacts/consequuntur"
 );
 
 const params = {
@@ -1735,7 +1922,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;delete(
-    'http://localhost:8000/api/api/contacts/non',
+    'http://localhost:8000/api/api/contacts/consequuntur',
     [
         'headers' =&gt; [
             'Authorization' =&gt; 'Bearer {token}',
@@ -1841,10 +2028,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="id"                data-endpoint="DELETEapi-contacts--id-"
-               value="non"
+               value="consequuntur"
                data-component="url">
     <br>
-<p>The ID of the contact. Example: <code>non</code></p>
+<p>The ID of the contact. Example: <code>consequuntur</code></p>
             </div>
                         <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
                                     <div style="padding-left: 28px; clear: unset;">

@@ -7,6 +7,34 @@ servers:
   -
     url: 'http://localhost:8000/api'
 paths:
+  /api/logtest:
+    get:
+      summary: ''
+      operationId: getApiLogtest
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Log gravado'
+                properties:
+                  message:
+                    type: string
+                    example: 'Log gravado'
+      tags:
+        - Endpoints
   /api/register:
     post:
       summary: 'Registra um novo usuário.'
@@ -162,7 +190,7 @@ paths:
       requestBody:
         required: true
         content:
-          application/json:
+          multipart/form-data:
             schema:
               type: object
               properties:
@@ -173,7 +201,7 @@ paths:
                 second_name:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 100 characters.'
-                  example: mxtnwvikjppycxfqjdjw
+                  example: pxtrlntxbhctkuqwzx
                 email:
                   type: string
                   description: 'Email do contato.'
@@ -182,6 +210,10 @@ paths:
                   type: string
                   description: 'Número do contato.'
                   example: (11)999999999
+                image:
+                  type: string
+                  format: binary
+                  description: 'Must be an image.'
                 secondName:
                   type: string
                   description: 'Nome do contato.'
@@ -306,7 +338,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the contact.'
-        example: dicta
+        example: ullam
         required: true
         schema:
           type: string
