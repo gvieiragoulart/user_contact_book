@@ -12,7 +12,7 @@ class LogstashLogger
     public function __invoke(array $config): LoggerInterface
     {
         $handler = new SocketHandler("udp://{$config['host']}:{$config['port']}");
-        $handler->setFormatter(new LogstashFormatter(config('app.name')));
+        $handler->setFormatter(new LogstashFormatter(config('app.name'), env('APP_NAME', 'UserContactsRegister')));
 
         return new Logger('logstash.main', [$handler]);
     }
