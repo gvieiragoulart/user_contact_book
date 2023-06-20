@@ -48,3 +48,13 @@
 2023-06-17 18:34:16 Error executing "ReceiveMessage" on "http://localstack:4566/000000000000/EMAIL_QUEUE"; AWS HTTP error: cURL error 6: Could not resolve host: localstack (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for http://localstack:4566/000000000000/EMAIL_QUEUE
 2023-06-17 18:34:17 Error executing "ReceiveMessage" on "http://localstack:4566/000000000000/EMAIL_QUEUE"; AWS HTTP error: cURL error 6: Could not resolve host: localstack (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for http://localstack:4566/000000000000/EMAIL_QUEUE
 2023-06-19 16:32:05 Error executing "ReceiveMessage" on "http://localstack:4566/000000000000/EMAIL_QUEUE"; AWS HTTP error: cURL error 6: Could not resolve host: localstack (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for http://localstack:4566/000000000000/EMAIL_QUEUE
+2023-06-20 12:44:51 oi
+2023-06-20 12:45:01 oi
+2023-06-20 12:45:11 oi
+2023-06-20 12:45:21 oi
+2023-06-20 12:45:31 oi
+2023-06-20 12:45:41 oi
+2023-06-20 12:45:51 oi
+2023-06-20 12:46:01 oi
+2023-06-20 12:46:10 oi
+2023-06-20 12:46:20 oi
