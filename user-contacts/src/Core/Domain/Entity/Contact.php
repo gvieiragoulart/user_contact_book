@@ -18,19 +18,20 @@ class Contact
         public string $secondName = '',
         public string $number = '',
         public string $email = '',
-        public string $imagePath = '',
+        public string $image_path = '',
     ) {
         $this->id = $this->id ? new Uuid($this->id) : Uuid::generate();
 
         $this->validate();
     }
 
-    public function update(?string $name, ?string $secondName, ?string $number, ?string $email)
+    public function update(?string $name, ?string $secondName, ?string $number, ?string $email, ?string $image_path)
     {
         $this->name = $name ?? $this->name;
         $this->secondName = $secondName ?? $this->secondName;
         $this->number = $number ?? $this->number;
         $this->email = $email ?? $this->email;
+        $this->image_path = $image_path ?? $this->image_path;
 
         $this->validate();
     }
@@ -44,7 +45,7 @@ class Contact
             'second_name' => $this->secondName,
             'number' => $this->number,
             'email' => $this->email,
-            'image_path' => $this->imagePath,
+            'image_path' => $this->image_path,
         ];
     }
 

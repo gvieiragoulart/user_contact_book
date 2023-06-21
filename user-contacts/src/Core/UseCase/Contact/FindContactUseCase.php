@@ -24,7 +24,8 @@ class FindContactUseCase
             name: $contact->name,
             second_name: $contact->secondName,
             number: $contact->number,
-            email: $contact->email
+            email: $contact->email,
+            image_path: $contact->image_path ?? '',
         );
     }
 }

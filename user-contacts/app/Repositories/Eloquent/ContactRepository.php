@@ -106,7 +106,7 @@ class ContactRepository implements ContactRepositoryInterface
             secondName: $model->second_name,
             email: $model->email,
             number: $model->number,
-            imagePath: $model->image_path,
+            image_path: $model->image_path,
         );
     }
 }

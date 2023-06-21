@@ -11,7 +11,7 @@ class CreateContactOutputDto
         public string $second_name,
         public string $number,
         public string $email,
-        public string $imagePath,
+        public string $image_path,
     ) {
     }
 }

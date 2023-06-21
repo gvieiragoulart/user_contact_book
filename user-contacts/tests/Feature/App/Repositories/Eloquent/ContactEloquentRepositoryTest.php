@@ -52,7 +52,7 @@ class ContactEloquentRepositoryTest extends TestCase
             secondName: $contact->second_name,
             number: $contact->number,
             email: $contact->email,
-            imagePath: $contact->image_path,
+            image_path: $contact->image_path,
         );
 
         $entity->update(

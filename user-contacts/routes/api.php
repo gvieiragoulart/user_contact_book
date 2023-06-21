@@ -25,7 +25,7 @@ Route::group([
     Route::post('me', AuthController::class.'@me');
 });
 Route::apiResource('contacts', ContactController::class)->middleware('auth:api');
-
+Route::post('contacts/{id}/image', [ContactController::class, 'updateImage'])->middleware('auth:api');
 Route::get('/', function () {
     return response()->json(['message' => 'Welcome to the API']);
 });

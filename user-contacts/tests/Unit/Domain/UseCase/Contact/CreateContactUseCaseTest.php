@@ -30,7 +30,7 @@ class CreateContactUseCaseTest extends TestCase
         $secondName = 'Second Name Contact';
         $number = '16123456789';
         $email = 'teste@teste.com';
-        $imagePath = '';
+        $image_path = '';
 
         $this->mockEntity = Mockery::mock(Contact::class);
         $this->mockEntity->id = $id;
@@ -39,7 +39,7 @@ class CreateContactUseCaseTest extends TestCase
         $this->mockEntity->secondName = $secondName;
         $this->mockEntity->number = $number;
         $this->mockEntity->email = $email;
-        $this->mockEntity->imagePath = $imagePath;
+        $this->mockEntity->image_path = $image_path;
         $this->mockEntity->shouldReceive('id')->andReturn(Uuid::uuid4()->toString());
 
         $this->mockRepo = Mockery::mock(ContactRepositoryInterface::class);
@@ -53,7 +53,7 @@ class CreateContactUseCaseTest extends TestCase
             secondName: $secondName,
             number: $number,
             email: $email,
-            image: $imagePath,
+            image: $image_path,
         );
 
         $useCase = new CreateContactUseCase($this->mockRepo, $this->mockS3);

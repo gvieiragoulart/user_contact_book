@@ -92,7 +92,7 @@ class ContactTest extends TestCase
                 'secondName',
                 'number',
                 'email',
-                'imagePath'
+                'image_path'
             ],
         ]);
     }
@@ -117,7 +117,7 @@ class ContactTest extends TestCase
                     'secondName',
                     'number',
                     'email',
-                    'imagePath'
+                    'image_path'
                 ],
             ],
         ]);

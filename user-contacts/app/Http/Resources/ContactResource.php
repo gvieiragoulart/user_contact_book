@@ -20,7 +20,7 @@ class ContactResource extends JsonResource
             'secondName'   => $this->second_name,
             'email'=> $this->email,
             'number'=> $this->number,
-            'imagePath'=> $this->image_path ?? '',
+            'image_path'=> $this->image_path ?? '',
         ];
     }
 }

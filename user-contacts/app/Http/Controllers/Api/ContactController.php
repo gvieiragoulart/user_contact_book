@@ -6,15 +6,18 @@ use App\Helpers\JwtHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateContactRequest;
 use App\Http\Requests\UpdateContactRequest;
+use App\Http\Requests\UpdateImageContactRequest;
 use App\Http\Resources\ContactResource;
 use Core\UseCase\Contact\CreateContactUseCase;
 use Core\UseCase\Contact\DeleteContactUseCase;
 use Core\UseCase\Contact\FindAllContactUseCase;
 use Core\UseCase\Contact\FindContactUseCase;
 use Core\UseCase\Contact\UpdateContactUseCase;
+use Core\UseCase\Contact\UpdateImageContactUseCase;
 use Core\UseCase\DTO\Contact\Create\CreateContactInputDto;
 use Core\UseCase\DTO\Contact\FindAll\FindAllContactsInputDto;
 use Core\UseCase\DTO\Contact\Update\UpdateContactInputDto;
+use Core\UseCase\DTO\Contact\Update\UpdateImageContactInputDto;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -64,7 +67,7 @@ class ContactController extends Controller
             input: new CreateContactInputDto(
                 userId: JwtHelper::getUserId(),
                 name: $request->name,
-                secondName: $request->secondName ?? '',
+                secondName: $request->second_name ?? '',
                 number: $request->number,
                 email: $request->email,
                 image: $request->image ?? ''
@@ -121,6 +124,32 @@ class ContactController extends Controller
                 number: $request->number,
                 email: $request->email,
                 image: $request->image ?? null
+            )
+        );
+
+        return $this->sendDataWithMessage(
+            message: __('controller.basicCrud.create', ['value' => 'Company']),
+            data: ContactResource::make($contact),
+            statusCode: Response::HTTP_OK
+        );
+    }
+
+    /**
+     * Atualiza uma imagem de um contato do usuário logado.
+     *
+     * @queryParam id required Id do contato. Example: ecd4f3ff-7e8d-4358-ac74-f997955c7c86
+     *
+     * @bodyParam image file required Imagem do contato. Example: image.png
+     * @ContactResource App\Http\Resources\UserResource
+     *
+     * @header Authorization Bearer {token}
+     */
+    public function updateImage(string $id, UpdateImageContactRequest $request, UpdateImageContactUseCase $useCase)
+    {
+        $contact = $useCase->execute(
+            input: new UpdateImageContactInputDto(
+                id: $id,
+                image: $request->image
             )
         );
 
