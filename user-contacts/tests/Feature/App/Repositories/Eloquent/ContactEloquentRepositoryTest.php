@@ -60,6 +60,7 @@ class ContactEloquentRepositoryTest extends TestCase
             secondName: 'updated second name',
             number: '1234567891033',
             email: 'updateemail@email.com',
+            image_path: 'updated image path'
         );
 
         $response = $repository->update($entity);

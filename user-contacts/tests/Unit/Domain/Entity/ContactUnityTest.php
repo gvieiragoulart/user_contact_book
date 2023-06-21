@@ -44,6 +44,7 @@ class ContactUnityTest extends TestCase
             secondName: 'Second Name Contact Updated',
             number: '16123456787',
             email: 'testeupdated@teste.com',
+            image_path: 'http:\/\/localstack:4566\/%2Fcontacts-images-bucket\/back.png'
         );
 
         $this->assertEquals($uuid, $contact->id());
